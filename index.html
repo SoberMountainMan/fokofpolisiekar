@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fokofpolisiekar.com — Ons Hou Die Domein Vas</title>
+  <meta name="description" content="Hierdie is nie die band nie. Hierdie is 'n parody. Bring shirts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f0ece4;
+      --red: #c41212;
+      --red-dark: #8b0000;
+      --grey: #2a2a2a;
+      --yellow: #d4a017;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'IBM Plex Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ── Noise overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.08;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    /* ── Scanlines ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.15) 2px,
+        rgba(0,0,0,0.15) 4px
+      );
+    }
+
+    /* ── Main container ── */
+    .container {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 900px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ── Parody badge ── */
+    .parody-badge {
+      display: inline-block;
+      border: 2px solid var(--red);
+      padding: 0.3rem 1.2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(0.7rem, 2vw, 0.9rem);
+      letter-spacing: 0.4em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      transform: rotate(-2deg);
+      background: rgba(196, 18, 18, 0.06);
+    }
+
+    /* ── Red slash accent ── */
+    .slash {
+      display: block;
+      width: 120px;
+      height: 6px;
+      background: var(--red);
+      margin: 0 auto 2rem;
+      transform: skewX(-20deg);
+      box-shadow: 0 0 20px var(--red-dark);
+    }
+
+    /* ── Domain title with glitch ── */
+    .domain {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 10vw, 6.5rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--white);
+      text-transform: uppercase;
+      position: relative;
+      margin-bottom: 0.4rem;
+      animation: glitch-skew 8s infinite linear alternate-reverse;
+    }
+
+    .domain::before,
+    .domain::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .domain::before {
+      color: var(--red);
+      animation: glitch-before 3s infinite linear alternate-reverse;
+      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+      transform: translate(-2px, -1px);
+      opacity: 0.7;
+    }
+
+    .domain::after {
+      color: #00ffff;
+      animation: glitch-after 2s infinite linear alternate-reverse;
+      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+      transform: translate(2px, 1px);
+      opacity: 0.4;
+    }
+
+    @keyframes glitch-before {
+      0%   { transform: translate(-2px, -1px); }
+      20%  { transform: translate(3px, 0px); }
+      40%  { transform: translate(-1px, 2px); }
+      60%  { transform: translate(0px, -2px); }
+      80%  { transform: translate(2px, 1px); }
+      100% { transform: translate(-3px, 0px); }
+    }
+
+    @keyframes glitch-after {
+      0%   { transform: translate(2px, 1px); }
+      25%  { transform: translate(-1px, -2px); }
+      50%  { transform: translate(3px, 0px); }
+      75%  { transform: translate(0px, 2px); }
+      100% { transform: translate(-2px, -1px); }
+    }
+
+    @keyframes glitch-skew {
+      0%   { transform: skewX(0deg); }
+      10%  { transform: skewX(0deg); }
+      11%  { transform: skewX(-0.5deg); }
+      12%  { transform: skewX(0deg); }
+      50%  { transform: skewX(0deg); }
+      51%  { transform: skewX(0.3deg); }
+      52%  { transform: skewX(0deg); }
+      100% { transform: skewX(0deg); }
+    }
+
+    .domain-com {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+      color: var(--text-dim, #666);
+      letter-spacing: 0.2em;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Subhead ── */
+    .subhead {
+      font-family: 'Special Elite', cursive;
+      font-size: clamp(1.1rem, 3.5vw, 1.7rem);
+      color: var(--yellow);
+      letter-spacing: 0.05em;
+      margin-bottom: 2.5rem;
+      line-height: 1.4;
+    }
+
+    /* ── Ransom note body ── */
+    .ransom {
+      border: 2px solid var(--grey);
+      border-left: 4px solid var(--red);
+      padding: 1.8rem 2rem;
+      text-align: left;
+      margin: 0 auto 2.5rem;
+      max-width: 560px;
+      background: rgba(255,255,255,0.02);
+      position: relative;
+    }
+
+    .ransom::before {
+      content: 'RANSOM NOTE / LOSGELDNOTA';
+      position: absolute;
+      top: -0.6em;
+      left: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--red);
+      background: var(--black);
+      padding: 0 0.5rem;
+    }
+
+    .ransom p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: rgba(240,236,228,0.8);
+      margin-bottom: 1rem;
+    }
+
+    .ransom p:last-child { margin-bottom: 0; }
+
+    .ransom .af {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .ransom .demand {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      color: var(--red);
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    .ransom .demand-sub {
+      font-size: 0.75rem;
+      color: rgba(240,236,228,0.5);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Torn divider ── */
+    .torn {
+      width: 100%;
+      max-width: 400px;
+      height: 20px;
+      margin: 0 auto 2rem;
+      background:
+        linear-gradient(135deg, var(--black) 25%, transparent 25%) -10px 0,
+        linear-gradient(225deg, var(--black) 25%, transparent 25%) -10px 0,
+        linear-gradient(315deg, var(--black) 25%, transparent 25%),
+        linear-gradient(45deg, var(--black) 25%, transparent 25%);
+      background-size: 20px 20px;
+      background-color: var(--grey);
+      opacity: 0.3;
+    }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(240,236,228,0.3);
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.8;
+    }
+
+    .disclaimer strong {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 3;
+      margin-top: auto;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(240,236,228,0.25);
+    }
+
+    footer a {
+      color: rgba(240,236,228,0.35);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(196,18,18,0.3);
+    }
+
+    /* ── Xerox marks (decorative corners) ── */
+    .xerox {
+      position: fixed;
+      z-index: 3;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem;
+      color: rgba(240,236,228,0.08);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .xerox--tl { top: 1rem; left: 1rem; }
+    .xerox--br { bottom: 1rem; right: 1rem; transform: rotate(180deg); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .container { padding: 1.5rem 1rem; }
+      .ransom { padding: 1.2rem 1.4rem; }
+      .slash { width: 80px; height: 4px; }
+      .parody-badge { transform: rotate(-1deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <span class="xerox xerox--tl">FPK—PARODIE</span>
+  <span class="xerox xerox--br">FPK—PARODIE</span>
+
+  <main class="container">
+
+    <div class="parody-badge">&#9888; Parodie / Parody &#9888;</div>
+
+    <span class="slash"></span>
+
+    <h1 class="domain" data-text="fokofpolisiekar">fokofpolisiekar</h1>
+    <div class="domain-com">.com</div>
+
+    <p class="subhead">Ons hou die domein vas.</p>
+
+    <div class="ransom">
+      <p>
+        <span class="af">Hierdie is nie die band nie.</span><br>
+        This is not the band. This is not their website.
+        The band did not build this. The band probably doesn't even know this exists.
+      </p>
+      <p>
+        <span class="af">Hierdie is 'n parody.</span><br>
+        A parody. 'n Grap. 'n Domein-gyseling.
+      </p>
+      <p>
+        <span class="af">As julle die domein terug wil hê&hellip;</span><br>
+        If you want this domain back, we have one demand:
+      </p>
+
+      <span class="demand">Bring shirts. Baie shirts.</span>
+      <span class="demand-sub">T-shirts. Hoodies. Tour merch. We're not picky.</span>
+
+      <p>
+        <span class="af">Ons is nie boos nie. Ons is net kreatief.</span><br>
+        We're not angry. We're just creative.
+        En ons het 'n goeie domein.
+      </p>
+    </div>
+
+    <div class="torn"></div>
+
+    <div class="disclaimer">
+      <strong>PARODIE / PARODY.</strong>
+      Hierdie webwerf is nie geaffilieer met, goedgekeur deur, of verbind aan
+      Fokofpolisiekar, enige bandlid, of enige verwante entiteit nie.<br>
+      This website is not affiliated with, endorsed by, or connected to
+      Fokofpolisiekar, any band member, or any related entity.
+      No copyright infringement is intended. All rights belong to their respective owners.
+    </div>
+
+  </main>
+
+  <footer>
+    A <a href="https://wildlogic.co.za">WildLogic</a> project
+  </footer>
+
+</body>
+</html>
