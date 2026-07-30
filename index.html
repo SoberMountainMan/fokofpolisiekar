@@ -3,375 +3,442 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fokofpolisiekar.com — Ons Hou Die Domein Vas</title>
-  <meta name="description" content="Hierdie is nie die band nie. Hierdie is 'n parody. Bring shirts.">
+  <title>fokofpolisiekar.com — Domein Gyseling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
-      --black: #0a0a0a;
-      --white: #f0ece4;
-      --red: #c41212;
-      --red-dark: #8b0000;
-      --grey: #2a2a2a;
-      --yellow: #d4a017;
+      --bg-color: #0c0c0c;
+      --card-bg: #161616;
+      --accent-red: #ff2a2a;
+      --accent-green: #00ff66;
+      --text-main: #e0e0e0;
+      --text-muted: #888888;
+      --border-color: #262626;
     }
 
-    html { font-size: 16px; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'IBM Plex Mono', monospace;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Courier Prime', monospace;
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      overflow-x: hidden;
-      position: relative;
+      padding: 2rem 1rem;
+      background-image: 
+        radial-gradient(circle at 50% 120%, rgba(255, 42, 42, 0.08), transparent 70%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.4) 3px);
     }
 
-    /* ── Noise overlay ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      opacity: 0.08;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 256px 256px;
-    }
-
-    /* ── Scanlines ── */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.15) 2px,
-        rgba(0,0,0,0.15) 4px
-      );
-    }
-
-    /* ── Main container ── */
     .container {
-      position: relative;
-      z-index: 3;
+      max-width: 680px;
       width: 100%;
-      max-width: 900px;
-      padding: 2rem;
+      margin: 0 auto;
+    }
+
+    /* Top Ticker / Banner */
+    .banner {
+      background: var(--accent-red);
+      color: #000;
+      font-weight: 700;
+      text-transform: uppercase;
       text-align: center;
-    }
-
-    /* ── Parody badge ── */
-    .parody-badge {
-      display: inline-block;
-      border: 2px solid var(--red);
-      padding: 0.3rem 1.2rem;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(0.7rem, 2vw, 0.9rem);
-      letter-spacing: 0.4em;
-      color: var(--red);
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      transform: rotate(-2deg);
-      background: rgba(196, 18, 18, 0.06);
-    }
-
-    /* ── Red slash accent ── */
-    .slash {
-      display: block;
-      width: 120px;
-      height: 6px;
-      background: var(--red);
-      margin: 0 auto 2rem;
-      transform: skewX(-20deg);
-      box-shadow: 0 0 20px var(--red-dark);
-    }
-
-    /* ── Domain title with glitch ── */
-    .domain {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 10vw, 6.5rem);
-      letter-spacing: 0.04em;
-      line-height: 1;
-      color: var(--white);
-      text-transform: uppercase;
-      position: relative;
-      margin-bottom: 0.4rem;
-      animation: glitch-skew 8s infinite linear alternate-reverse;
-    }
-
-    .domain::before,
-    .domain::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    .domain::before {
-      color: var(--red);
-      animation: glitch-before 3s infinite linear alternate-reverse;
-      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-      transform: translate(-2px, -1px);
-      opacity: 0.7;
-    }
-
-    .domain::after {
-      color: #00ffff;
-      animation: glitch-after 2s infinite linear alternate-reverse;
-      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-      transform: translate(2px, 1px);
-      opacity: 0.4;
-    }
-
-    @keyframes glitch-before {
-      0%   { transform: translate(-2px, -1px); }
-      20%  { transform: translate(3px, 0px); }
-      40%  { transform: translate(-1px, 2px); }
-      60%  { transform: translate(0px, -2px); }
-      80%  { transform: translate(2px, 1px); }
-      100% { transform: translate(-3px, 0px); }
-    }
-
-    @keyframes glitch-after {
-      0%   { transform: translate(2px, 1px); }
-      25%  { transform: translate(-1px, -2px); }
-      50%  { transform: translate(3px, 0px); }
-      75%  { transform: translate(0px, 2px); }
-      100% { transform: translate(-2px, -1px); }
-    }
-
-    @keyframes glitch-skew {
-      0%   { transform: skewX(0deg); }
-      10%  { transform: skewX(0deg); }
-      11%  { transform: skewX(-0.5deg); }
-      12%  { transform: skewX(0deg); }
-      50%  { transform: skewX(0deg); }
-      51%  { transform: skewX(0.3deg); }
-      52%  { transform: skewX(0deg); }
-      100% { transform: skewX(0deg); }
-    }
-
-    .domain-com {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: clamp(0.8rem, 2.5vw, 1.1rem);
-      color: var(--text-dim, #666);
-      letter-spacing: 0.2em;
-      margin-bottom: 2rem;
-    }
-
-    /* ── Subhead ── */
-    .subhead {
-      font-family: 'Special Elite', cursive;
-      font-size: clamp(1.1rem, 3.5vw, 1.7rem);
-      color: var(--yellow);
-      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+      transform: rotate(-1deg);
+      box-shadow: 0 4px 15px rgba(255, 42, 42, 0.3);
       margin-bottom: 2.5rem;
-      line-height: 1.4;
+      transition: all 0.3s ease;
     }
 
-    /* ── Ransom note body ── */
-    .ransom {
-      border: 2px solid var(--grey);
-      border-left: 4px solid var(--red);
-      padding: 1.8rem 2rem;
-      text-align: left;
-      margin: 0 auto 2.5rem;
-      max-width: 560px;
-      background: rgba(255,255,255,0.02);
-      position: relative;
-    }
-
-    .ransom::before {
-      content: 'RANSOM NOTE / LOSGELDNOTA';
-      position: absolute;
-      top: -0.6em;
-      left: 1rem;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      color: var(--red);
-      background: var(--black);
-      padding: 0 0.5rem;
-    }
-
-    .ransom p {
-      font-size: 0.88rem;
-      line-height: 1.8;
-      color: rgba(240,236,228,0.8);
-      margin-bottom: 1rem;
-    }
-
-    .ransom p:last-child { margin-bottom: 0; }
-
-    .ransom .af {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .ransom .demand {
-      display: block;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 0.08em;
-      color: var(--red);
-      margin: 1.2rem 0 0.4rem;
-    }
-
-    .ransom .demand-sub {
-      font-size: 0.75rem;
-      color: rgba(240,236,228,0.5);
-      letter-spacing: 0.05em;
-    }
-
-    /* ── Torn divider ── */
-    .torn {
-      width: 100%;
-      max-width: 400px;
-      height: 20px;
-      margin: 0 auto 2rem;
-      background:
-        linear-gradient(135deg, var(--black) 25%, transparent 25%) -10px 0,
-        linear-gradient(225deg, var(--black) 25%, transparent 25%) -10px 0,
-        linear-gradient(315deg, var(--black) 25%, transparent 25%),
-        linear-gradient(45deg, var(--black) 25%, transparent 25%);
-      background-size: 20px 20px;
-      background-color: var(--grey);
-      opacity: 0.3;
-    }
-
-    /* ── Disclaimer ── */
-    .disclaimer {
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(240,236,228,0.3);
-      max-width: 500px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.8;
-    }
-
-    .disclaimer strong {
-      color: var(--red);
-      font-weight: 700;
-    }
-
-    /* ── Footer ── */
-    footer {
-      position: relative;
-      z-index: 3;
-      margin-top: auto;
-      padding: 2rem;
+    /* Main Header */
+    header {
       text-align: center;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      letter-spacing: 3px;
+      line-height: 0.9;
+      color: #fff;
+      text-shadow: 3px 3px 0px var(--accent-red);
+      text-transform: lowercase;
+    }
+
+    .sub-quote {
+      margin-top: 1rem;
+      font-style: italic;
+      color: var(--accent-red);
+      font-size: 1.1rem;
+      border-left: 3px solid var(--accent-red);
+      padding-left: 0.75rem;
+      display: inline-block;
+      text-align: left;
+    }
+
+    /* Content Card */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      position: relative;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card::before {
+      content: "OFFISIËLE KENNISGEWING";
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--bg-color);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      padding: 0 8px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .af-text {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .en-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Checklist Header */
+    .checklist-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Progress Bar Component */
+    .progress-box {
+      background: #0f0f0f;
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
       text-transform: uppercase;
-      color: rgba(240,236,228,0.25);
+      letter-spacing: 1px;
+    }
+
+    .progress-label {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .progress-counter {
+      color: var(--accent-red);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 18px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent-red);
+      box-shadow: 0 0 10px rgba(255, 42, 42, 0.5);
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+      background-image: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.3) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.3) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 1rem 1rem;
+    }
+
+    .progress-status {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-style: italic;
+      min-height: 1.2rem;
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .checklist li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .checklist label {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checklist input[type="checkbox"] {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--accent-red);
+      background: transparent;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .checklist input[type="checkbox"]:checked::after {
+      content: "✕";
+      position: absolute;
+      color: var(--accent-red);
+      font-size: 14px;
+      top: -3px;
+      left: 2px;
+      font-weight: bold;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: var(--accent-red);
+      border: 2px solid var(--accent-red);
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      padding: 0.8rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: var(--accent-red);
+      color: #000;
+      box-shadow: 0 0 15px rgba(255, 42, 42, 0.4);
+    }
+
+    /* Disclaimer Footer */
+    .disclaimer {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+      margin-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     footer a {
-      color: rgba(240,236,228,0.35);
+      color: var(--text-main);
       text-decoration: none;
-      border-bottom: 1px solid rgba(196,18,18,0.3);
+      border-bottom: 1px dotted var(--text-muted);
     }
 
-    /* ── Xerox marks (decorative corners) ── */
-    .xerox {
-      position: fixed;
-      z-index: 3;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.55rem;
-      color: rgba(240,236,228,0.08);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      pointer-events: none;
-    }
-
-    .xerox--tl { top: 1rem; left: 1rem; }
-    .xerox--br { bottom: 1rem; right: 1rem; transform: rotate(180deg); }
-
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .container { padding: 1.5rem 1rem; }
-      .ransom { padding: 1.2rem 1.4rem; }
-      .slash { width: 80px; height: 4px; }
-      .parody-badge { transform: rotate(-1deg); }
+    footer a:hover {
+      color: var(--accent-red);
+      border-color: var(--accent-red);
     }
   </style>
 </head>
 <body>
 
-  <span class="xerox xerox--tl">FPK—PARODIE</span>
-  <span class="xerox xerox--br">FPK—PARODIE</span>
-
-  <main class="container">
-
-    <div class="parody-badge">&#9888; Parodie / Parody &#9888;</div>
-
-    <span class="slash"></span>
-
-    <h1 class="domain" data-text="fokofpolisiekar">fokofpolisiekar</h1>
-    <div class="domain-com">.com</div>
-
-    <p class="subhead">Ons hou die domein vas.</p>
-
-    <div class="ransom">
-      <p>
-        <span class="af">Hierdie is nie die band nie.</span><br>
-        This is not the band. This is not their website.
-        The band did not build this. The band probably doesn't even know this exists.
-      </p>
-      <p>
-        <span class="af">Hierdie is 'n parody.</span><br>
-        A parody. 'n Grap. 'n Domein-gyseling.
-      </p>
-      <p>
-        <span class="af">As julle die domein terug wil hê&hellip;</span><br>
-        If you want this domain back, we have one demand:
-      </p>
-
-      <span class="demand">Bring shirts. Baie shirts.</span>
-      <span class="demand-sub">T-shirts. Hoodies. Tour merch. We're not picky.</span>
-
-      <p>
-        <span class="af">Ons is nie boos nie. Ons is net kreatief.</span><br>
-        We're not angry. We're just creative.
-        En ons het 'n goeie domein.
-      </p>
+  <div class="container">
+      
+    <div class="banner" id="topBanner">
+      ⚠ DOMEIN-GYSELING / PARODIE ⚠
     </div>
 
-    <div class="torn"></div>
+    <header>
+      <h1>fokofpolisiekar.com</h1>
+      <div class="sub-quote">
+        "Dink jy 'n man op die domein is 'n goeie idee?"
+      </div>
+    </header>
 
-    <div class="disclaimer">
-      <strong>PARODIE / PARODY.</strong>
-      Hierdie webwerf is nie geaffilieer met, goedgekeur deur, of verbind aan
-      Fokofpolisiekar, enige bandlid, of enige verwante entiteit nie.<br>
-      This website is not affiliated with, endorsed by, or connected to
-      Fokofpolisiekar, any band member, or any related entity.
-      No copyright infringement is intended. All rights belong to their respective owners.
-    </div>
+    <main class="card">
+        
+      <p class="af-text">Hierdie is 'n monoloog op 'n gesteelde IP-adres.</p>
+      <p class="en-text">
+        This is not the band. This is not their website. François, Hunter, Wynand, Jaco, and Johnny probably haven't even noticed this exists yet.
+      </p>
 
-  </main>
+      <p class="af-text">Hierdie is 'n parodie. 'n Grap. 'n Bellville-styl domein-gyseling.</p>
+      <p class="en-text">
+        A pure parody. No malice, just creative domain squatting for a cause.
+      </p>
 
-  <footer>
-    A <a href="https://wildlogic.co.za">WildLogic</a> project
-  </footer>
+      <p class="af-text">Is julle tevrede? Ons is nog nie.</p>
+      <p class="en-text">
+        If you want the DNS records transferred back, we have one simple demand:
+      </p>
+
+      <div class="checklist-title">DIE LYS VAN EISEN</div>
+
+      <!-- Interactive Progress Bar Component -->
+      <div class="progress-box">
+        <div class="progress-meta">
+          <span class="progress-label">Ransom Status</span>
+          <span class="progress-counter" id="progressCounter">0 / 4 EISE NAGEKOM (0%)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-status" id="progressStatus">
+          Klik die eise hieronder soos merch bevestig word...
+        </div>
+      </div>
+
+      <ul class="checklist">
+        <li>
+          <input type="checkbox" id="item1">
+          <label for="item1">5x XL Hoodies (Vir die koue nagte op die platteland)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="item2">
+          <label for="item2">10x Tour T-Shirts (We're not picky)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="item3">
+          <label for="item3">2x Kaste Fokof Lager (Koue verkieslik)</label>
+        </li>
+        <li>
+          <input type="checkbox" id="item4">
+          <label for="item4">1x Hunter Venter se handtekening op 'n viltie</label>
+        </li>
+      </ul>
+
+      <a href="mailto:info@wildlogic.co.za?subject=FPK%20Domain%20Ransom%20Trade" class="cta-button" id="ctaButton">
+        STUUR DIE MERCH & EISE DIE DOMEIN
+      </a>
+
+      <div class="disclaimer">
+        <strong>PARODIE / NO HARD FEELINGS.</strong><br>
+        Hierdie webwerf is nie geaffilieer met, goedgekeur deur, of verbind aan Fokofpolisiekar, enige bandlid, Wynberg-polisie, of enige verwante entiteit nie. No copyright infringement intended. All rights belong to their respective owners.
+      </div>
+
+    </main>
+
+    <footer>
+      'n <a href="https://wildlogic.co.za" target="_blank" rel="noopener">WildLogic</a> projek
+    </footer>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+      const progressFill = document.getElementById('progressFill');
+      const progressCounter = document.getElementById('progressCounter');
+      const progressStatus = document.getElementById('progressStatus');
+      const ctaButton = document.getElementById('ctaButton');
+      const topBanner = document.getElementById('topBanner');
+
+      const statusMessages = {
+        0: "Domein is stilstaande en veilig in gyseling.",
+        25: "Eerste hitte opgemerk! Die span beweeg...",
+        50: "Halfpad na vryheid! Die bier is op ys.",
+        75: "Byna daar! Wynand soek reeds sy hoodie...",
+        100: "100% NAGEKOM! 'Hemel op die Platteland' speel kliphard! 🍻🔥"
+      };
+
+      function updateProgress() {
+        const total = checkboxes.length;
+        const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+        const percentage = Math.round((checkedCount / total) * 100);
+
+        progressFill.style.width = percentage + '%';
+        progressCounter.textContent = `${checkedCount} / ${total} EISE NAGEKOM (${percentage}%)`;
+        progressStatus.textContent = statusMessages[percentage] || `${percentage}% van eise nagekom.`;
+
+        if (percentage === 100) {
+          progressFill.style.backgroundColor = "var(--accent-green)";
+          progressCounter.style.color = "var(--accent-green)";
+
+          topBanner.textContent = "⚡ DOMEIN VRYGEGEE — MERCH GEASSEKUREER! ⚡";
+          topBanner.style.background = "var(--accent-green)";
+          topBanner.style.color = "#000";
+
+          ctaButton.textContent = "TRANSAKSIE VOLTOOI — STUUR E-POS BEVESTIGING";
+          ctaButton.style.borderColor = "var(--accent-green)";
+          ctaButton.style.color = "var(--accent-green)";
+        } else {
+          progressFill.style.backgroundColor = "var(--accent-red)";
+          progressCounter.style.color = "var(--accent-red)";
+
+          topBanner.textContent = "⚠ DOMEIN-GYSELING / PARODIE ⚠";
+          topBanner.style.background = "var(--accent-red)";
+          topBanner.style.color = "#000";
+
+          ctaButton.textContent = "STUUR DIE MERCH & EISE DIE DOMEIN";
+          ctaButton.style.borderColor = "var(--accent-red)";
+          ctaButton.style.color = "var(--accent-red)";
+        }
+      }
+
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', updateProgress);
+      });
+
+      updateProgress();
+    });
+  </script>
 
 </body>
 </html>
