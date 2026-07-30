@@ -70,12 +70,30 @@
 
     h1 {
       font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3.5rem, 10vw, 6rem);
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
       letter-spacing: 3px;
-      line-height: 0.9;
-      color: #fff;
-      text-shadow: 3px 3px 0px var(--accent-red);
+      line-height: 1;
       text-transform: lowercase;
+      background: linear-gradient(
+        90deg,
+        var(--accent-red),
+        #ff6a00,
+        #ffdd00,
+        var(--accent-red),
+        #ff6a00
+      );
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation: gradient-shift 6s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .sub-quote {
@@ -302,7 +320,7 @@
   <div class="container">
       
     <div class="banner" id="topBanner">
-      ⚠ DOMEIN-GYSELING / PARODIE ⚠
+      ⚠ DOMEIN-GYSELING ⚠
     </div>
 
     <header>
@@ -364,10 +382,6 @@
         </li>
       </ul>
 
-      <a href="mailto:info@wildlogic.co.za?subject=FPK%20Domain%20Ransom%20Trade" class="cta-button" id="ctaButton">
-        STUUR DIE MERCH & EISE DIE DOMEIN
-      </a>
-
       <div class="disclaimer">
         <strong>PARODIE / NO HARD FEELINGS.</strong><br>
         Hierdie webwerf is nie geaffilieer met, goedgekeur deur, of verbind aan Fokofpolisiekar, enige bandlid, Wynberg-polisie, of enige verwante entiteit nie. No copyright infringement intended. All rights belong to their respective owners.
@@ -387,7 +401,6 @@
       const progressFill = document.getElementById('progressFill');
       const progressCounter = document.getElementById('progressCounter');
       const progressStatus = document.getElementById('progressStatus');
-      const ctaButton = document.getElementById('ctaButton');
       const topBanner = document.getElementById('topBanner');
 
       const statusMessages = {
@@ -415,20 +428,13 @@
           topBanner.style.background = "var(--accent-green)";
           topBanner.style.color = "#000";
 
-          ctaButton.textContent = "TRANSAKSIE VOLTOOI — STUUR E-POS BEVESTIGING";
-          ctaButton.style.borderColor = "var(--accent-green)";
-          ctaButton.style.color = "var(--accent-green)";
         } else {
           progressFill.style.backgroundColor = "var(--accent-red)";
           progressCounter.style.color = "var(--accent-red)";
 
-          topBanner.textContent = "⚠ DOMEIN-GYSELING / PARODIE ⚠";
+          topBanner.textContent = "⚠ DOMEIN-GYSELING ⚠";
           topBanner.style.background = "var(--accent-red)";
           topBanner.style.color = "#000";
-
-          ctaButton.textContent = "STUUR DIE MERCH & EISE DIE DOMEIN";
-          ctaButton.style.borderColor = "var(--accent-red)";
-          ctaButton.style.color = "var(--accent-red)";
         }
       }
 
