@@ -3,26 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fokofpolisiekar.com — 'n Bellville Liefdesbrief</title>
+  <title>fokofpolisiekar.com — Die Informele Museum (Aan Die Bou)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #0c0c0c;
-      --card-bg: #161616;
+      --bg-color: #0a0a0a;
+      --card-bg: #141414;
       --accent-red: #ff2a2a;
-      --accent-green: #00ff66;
       --text-main: #e0e0e0;
       --text-muted: #888888;
       --border-color: #262626;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg-color);
@@ -36,406 +31,235 @@
       align-items: center;
       padding: 2rem 1rem;
       background-image: 
-        radial-gradient(circle at 50% 120%, rgba(255, 42, 42, 0.08), transparent 70%),
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.4) 3px);
+        radial-gradient(circle at 50% 100%, rgba(255, 42, 42, 0.1), transparent 70%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.5) 3px);
     }
 
     .container {
-      max-width: 680px;
+      max-width: 640px;
       width: 100%;
       margin: 0 auto;
+      text-align: center;
     }
 
-    /* Top Ticker / Banner */
-    .banner {
-      background: var(--accent-red);
-      color: #000;
+    .status-badge {
+      display: inline-block;
+      background: rgba(255, 42, 42, 0.15);
+      color: var(--accent-red);
+      border: 1px solid var(--accent-red);
       font-weight: 700;
       text-transform: uppercase;
-      text-align: center;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
       letter-spacing: 2px;
-      font-size: 0.9rem;
-      transform: rotate(-1deg);
-      box-shadow: 0 4px 15px rgba(255, 42, 42, 0.3);
-      margin-bottom: 2.5rem;
-      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
     }
 
-    /* Main Header */
-    header {
-      text-align: center;
-      margin-bottom: 2.5rem;
+    .kicker {
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
     }
 
     h1 {
       font-family: 'Bebas Neue', cursive;
-      font-size: clamp(2.2rem, 8vw, 4.5rem);
-      letter-spacing: 3px;
-      line-height: 1;
-      text-transform: lowercase;
-      background: linear-gradient(
-        90deg,
-        var(--accent-red),
-        #ff6a00,
-        #ffdd00,
-        var(--accent-red),
-        #ff6a00
-      );
-      background-size: 300% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      animation: gradient-shift 6s ease infinite;
+      font-size: clamp(3.5rem, 9vw, 5.5rem);
+      letter-spacing: 2px;
+      line-height: 0.9;
+      color: #fff;
+      text-shadow: 3px 3px 0px var(--accent-red);
+      margin-bottom: 0.5rem;
     }
 
-    @keyframes gradient-shift {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .sub-quote {
-      margin-top: 1rem;
+    .quote {
       font-style: italic;
       color: var(--accent-red);
       font-size: 1.1rem;
-      border-left: 3px solid var(--accent-red);
-      padding-left: 0.75rem;
-      display: inline-block;
-      text-align: left;
+      margin-bottom: 2.5rem;
     }
 
-    /* Content Card */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       padding: 2rem;
-      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       margin-bottom: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    .card::before {
-      content: "OFFISIËLE KENNISGEWING";
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--bg-color);
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      padding: 0 8px;
-      letter-spacing: 1px;
-    }
-
-    p {
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-    }
-
-    .af-text {
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .en-text {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Checklist Header */
-    .checklist-title {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-      color: #fff;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      border-bottom: 1px dashed var(--border-color);
-      padding-bottom: 0.5rem;
-    }
-
-    /* Progress Bar Component */
-    .progress-box {
-      background: #0f0f0f;
-      border: 1px solid var(--border-color);
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .progress-meta {
+    .art-frame {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 1.5rem auto;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      background: #000;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .progress-label {
-      color: #fff;
-      font-weight: bold;
-    }
-
-    .progress-counter {
-      color: var(--accent-red);
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    .progress-track {
-      width: 100%;
-      height: 18px;
-      background: #1a1a1a;
-      border: 1px solid #333;
+      justify-content: center;
       overflow: hidden;
-      position: relative;
     }
 
-    .progress-fill {
+    .art-frame img {
+      width: 100%;
       height: 100%;
-      width: 0%;
-      background: var(--accent-red);
-      box-shadow: 0 0 10px rgba(255, 42, 42, 0.5);
-      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
-      background-image: linear-gradient(
-        45deg,
-        rgba(0, 0, 0, 0.3) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(0, 0, 0, 0.3) 50%,
-        rgba(0, 0, 0, 0.3) 75%,
-        transparent 75%,
-        transparent
-      );
-      background-size: 1rem 1rem;
+      object-fit: cover;
     }
 
-    .progress-status {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-      font-style: italic;
-      min-height: 1.2rem;
+    .museum-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 0.5rem;
     }
 
-    /* Checklist */
-    .checklist {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
+    p { margin-bottom: 1.2rem; font-size: 0.95rem; }
+    p strong { color: #fff; }
 
-    .checklist li {
-      padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .btn-group {
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
-    .checklist label {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .checklist input[type="checkbox"] {
-      appearance: none;
-      width: 18px;
-      height: 18px;
-      border: 2px solid var(--accent-red);
-      background: transparent;
-      cursor: pointer;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .checklist input[type="checkbox"]:checked::after {
-      content: "✕";
-      position: absolute;
-      color: var(--accent-red);
-      font-size: 14px;
-      top: -3px;
-      left: 2px;
-      font-weight: bold;
-    }
-
-    /* CTA Button */
-    .cta-button {
+    .btn {
       display: block;
       width: 100%;
       background: transparent;
-      color: var(--accent-red);
-      border: 2px solid var(--accent-red);
+      color: #fff;
+      border: 1px solid var(--border-color);
       font-family: 'Bebas Neue', cursive;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       letter-spacing: 2px;
-      padding: 0.8rem;
-      text-align: center;
+      padding: 0.75rem;
       text-decoration: none;
       transition: all 0.2s ease;
-      cursor: pointer;
     }
 
-    .cta-button:hover {
+    .btn-primary {
+      border-color: var(--accent-red);
+      color: var(--accent-red);
+    }
+
+    .btn-primary:hover {
       background: var(--accent-red);
       color: #000;
       box-shadow: 0 0 15px rgba(255, 42, 42, 0.4);
     }
 
-    /* Disclaimer Footer */
-    .disclaimer {
+    .btn:hover:not(.btn-primary) {
+      border-color: #fff;
+    }
+
+    .pasella-note {
       font-size: 0.8rem;
       color: var(--text-muted);
-      text-align: center;
-      line-height: 1.5;
-      margin-top: 1rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .band-section {
+      text-align: left;
+      margin-top: 1.5rem;
       padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .band-section h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .band-section p {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .disclaimer-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      border-left: 2px solid var(--accent-red);
+      padding-left: 0.75rem;
+      margin-top: 1rem;
     }
 
     footer {
-      margin-top: 3rem;
-      text-align: center;
       font-size: 0.85rem;
       color: var(--text-muted);
     }
 
-    footer a {
-      color: var(--text-main);
-      text-decoration: none;
-      border-bottom: 1px dotted var(--text-muted);
-    }
-
-    footer a:hover {
-      color: var(--accent-red);
-      border-color: var(--accent-red);
-    }
+    footer a { color: var(--text-main); text-decoration: none; }
+    footer a:hover { color: var(--accent-red); }
   </style>
 </head>
 <body>
 
   <div class="container">
       
-    <div class="banner" id="topBanner">
-      ⚠ DOMEIN-PARKEERPLEK ⚠
+    <div class="status-badge">
+      ⚙ AAN DIE BOU / WORK IN PROGRESS
     </div>
 
     <header>
+      <div class="kicker">"Some revolutions are worth keeping alive..."</div>
       <h1>fokofpolisiekar.com</h1>
-      <div class="sub-quote">
-        "Dink jy 'n man op die domein is 'n goeie idee?"
-      </div>
+      <div class="quote">"Dink jy 'n man op die domein is 'n goeie idee?"</div>
     </header>
 
     <main class="card">
         
-      <p class="af-text"><em>"Hierdie is net 'n tydelike parkeerplek vir 'n goeie domein."</em></p>
-      <p class="en-text">
-        <em>"This is an unofficial fan tribute and landing page. We hold zero commercial intentions and will happily transfer this domain to the band for free whenever their team reaches out."</em>
-      </p>
-
-      <div class="checklist-title">DIE OPTIONELE FOETSKRIF WENS-LYS</div>
-
-      <!-- Interactive Progress Bar Component -->
-      <div class="progress-box">
-        <div class="progress-meta">
-          <span class="progress-label">Donasie Status</span>
-          <span class="progress-counter" id="progressCounter">0 / 4 FAN-WENSE HERKENG (0%)</span>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
-        <div class="progress-status" id="progressStatus">
-          Klik die wense hieronder soos merch bevestig word...
-        </div>
+      <!-- Placeholder frame for the 2003 EP cover artwork -->
+      <div class="art-frame">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Fokofpolisiekar_As_Jy_Met_Vuur_Speel_Sal_Jy_Brand.jpg" alt="As Jy Met Vuur Speel Sal Jy Brand EP Cover" onerror="this.style.display='none'; this.parentNode.innerText='[ 2003 EP ARTWORK ]'">
       </div>
 
-      <ul class="checklist">
-        <li>
-          <input type="checkbox" id="item1">
-          <label for="item1">5x XL Hoodies (Vir die koue nagte op die platteland)</label>
-        </li>
-        <li>
-          <input type="checkbox" id="item2">
-          <label for="item2">10x Tour T-Shirts (We're not picky)</label>
-        </li>
-        <li>
-          <input type="checkbox" id="item3">
-          <label for="item3">2x Kaste Fokof Lager (Koue verkieslik)</label>
-        </li>
-        <li>
-          <input type="checkbox" id="item4">
-          <label for="item4">1x Hunter Kennedy se handtekening op 'n viltie</label>
-        </li>
-      </ul>
+      <div class="museum-title">DIE INFORMELE MUSEUM ARCHIVE</div>
+        
+      <p>
+        Ons is besig om hierdie domein te omskep in 'n informele web-museum en argief ter viering van 20+ jaar van <strong>Fokofpolisiekar</strong> en Suid-Afrikaanse rock-geskiedenis.
+      </p>
 
-      <div class="disclaimer">
-        <strong>PARODIE / NIE-AMPTELIK / NO MALICE.</strong><br>
-        Hierdie webwerf is 'n nie-kommersiële parodie en is nie geaffilieer met, goedgekeur deur, of verbonde aan Fokofpolisiekar of hul bestuur nie. Alle handelsmerke en kopiereg behoort aan hul onderskeie eienaars.<br><br>
-        <em>Nota aan die band: Die domein is julle s'n sodra julle vra (geen koste/voorwaardes nie). Die t-hemde en bier is suiwer opsionele goeie wil!</em>
+      <div class="band-section">
+        <h2>DIE BAND</h2>
+        <p>
+          <strong>Fokofpolisiekar</strong> is 'n Afrikaanse rock-band vanuit Bellville, Wes-Kaap. Aktief sedert 2003. Sewe ateljeealbums. Die stem van 'n generasie.
+        </p>
+        <p>
+          Hierdie webwerf is 'n onafhanklike fan-argief. Nie geaffilieer met, goedgekeur deur, of verbonde aan Fokofpolisiekar, hul bestuur, of hul plate-etiket nie.
+        </p>
+        <p class="disclaimer-text">
+          Alle handelsmerke, album-kunswerk, en musiek behoort aan die onderskeie eienaars. Hierdie site huisves geen kopieregmateriaal nie — alle skakels verwys na amptelike kanale.
+        </p>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://fokofpolisiekar.co.za" target="_blank" rel="noopener" class="cta-button btn btn-primary">
+          BESOEK DIE AMPTELIKE WEBWERF (.CO.ZA)
+        </a>
+        <a href="https://open.spotify.com/artist/5X4B32J3xPjG5V74lKkH2o" target="_blank" rel="noopener" class="btn">
+          LUISTER OP SPOTIFY
+        </a>
+      </div>
+
+      <div class="pasella-note">
+        💡 <strong>Pasella Kennisgewing:</strong> Alle skakels is pasella. 0% kommissie. 100% van strome en verkeer gaan direk na die band en amptelike kanale.
       </div>
 
     </main>
 
     <footer>
-      'n <a href="https://wildlogic.co.za" target="_blank" rel="noopener">WildLogic</a> projek
+      'n <a href="https://wildlogic.co.za" target="_blank" rel="noopener">WildLogic</a> argief-projek
     </footer>
 
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
-      const progressFill = document.getElementById('progressFill');
-      const progressCounter = document.getElementById('progressCounter');
-      const progressStatus = document.getElementById('progressStatus');
-      const topBanner = document.getElementById('topBanner');
-
-      const statusMessages = {
-        0: "Domein is stilstaande en wag op die band se oproep.",
-        25: "Eerste hitte opgemerk! Die span beweeg...",
-        50: "Halfpad! Die bier is op ys.",
-        75: "Byna daar! Wynand soek reeds sy hoodie...",
-        100: "100% WENS-LYS VOLTOOI! 'Hemel op die Platteland' speel kliphard! 🍻🔥"
-      };
-
-      function updateProgress() {
-        const total = checkboxes.length;
-        const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
-        const percentage = Math.round((checkedCount / total) * 100);
-
-        progressFill.style.width = percentage + '%';
-        progressCounter.textContent = `${checkedCount} / ${total} FAN-WENSE HERKENG (${percentage}%)`;
-        progressStatus.textContent = statusMessages[percentage] || `${percentage}% van wense herken.`;
-
-        if (percentage === 100) {
-          progressFill.style.backgroundColor = "var(--accent-green)";
-          progressCounter.style.color = "var(--accent-green)";
-
-          topBanner.textContent = "⚡ WENS-LYS VOLTOOI — DOMEIN IS JULLE S'N! ⚡";
-          topBanner.style.background = "var(--accent-green)";
-          topBanner.style.color = "#000";
-
-        } else {
-          progressFill.style.backgroundColor = "var(--accent-red)";
-          progressCounter.style.color = "var(--accent-red)";
-
-          topBanner.textContent = "⚠ DOMEIN-PARKEERPLEK ⚠";
-          topBanner.style.background = "var(--accent-red)";
-          topBanner.style.color = "#000";
-        }
-      }
-
-      checkboxes.forEach(cb => {
-        cb.addEventListener('change', updateProgress);
-      });
-
-      updateProgress();
-    });
-  </script>
 
 </body>
 </html>

@@ -1,8 +1,8 @@
 # ORCHESTRATOR.md — fokofpolisiekar.com
 
 **Maintained by:** HQ orchestrator chat (no dedicated project-orchestrator chat yet)
-**Last updated:** 2026-07-29
-**Purpose:** Master ledger for the fokofpolisiekar.com project — a single static landing page (WIP/coming-soon aesthetic) hosted on GitHub Pages. Tiny scope; HQ triages directly until the project grows enough to warrant its own orchestrator chat.
+**Last updated:** 2026-07-31
+**Purpose:** Master ledger for the fokofpolisiekar.com project — "Die Informele Museum", an unofficial fan archive for the SA band Fokofpolisiekar. Static, multi-section site hosted on GitHub Pages. Funded by JP (superfan). The band explicitly doesn't want the .com domain (they're 100% .co.za).
 
 ---
 
@@ -13,6 +13,7 @@
 - **When the project grows** (multiple pages, content tracks, automation), open a dedicated project-orchestrator chat on `C:\WildLogic\fokofpolisiekar\` and hand the ledger to it. That chat then owns this file and triages for its own tracks.
 - **Routing DOWN (HQ → project):** HQ appends an `HQ NOTE — YYYY-MM-DD` section at the end of this file. The owning chat triages it on next sync.
 - **Routing UP (project → HQ):** HQ reads this ledger's status board + maintenance log on its own syncs. Prefix `HQ:` in the maintenance log for urgent flags.
+- **Writing standard:** All output follows `C:\WildLogic\WILDLOGIC-WRITING-STANDARDS.md`. AI agents: apply the 10 ADHD-friendly output rules + pre-send check.
 
 ---
 
@@ -20,7 +21,8 @@
 
 | Track | Scope | State | Owner | Notes |
 |---|---|---|---|---|
-| Landing page | Single-file static WIP/coming-soon page for fokofpolisiekar.com | **WIP** | HQ | `index.html` — self-contained, punk/alt aesthetic, GitHub Pages deploy |
+| WIP holding page deployment | Replace parody with "Aan die Bou" holding page at fokofpolisiekar.com | **DONE** | HQ | Deployed 2026-07-31. Parody retired. Includes "Die Band" section with unofficial disclaimer, pasella manifesto, Spotify + .co.za CTAs. |
+| Die Informele Museum (full build) | Multi-section static fan archive — hero, pasella manifesto, band ecosystem hub, discography vault, interactive timeline | **NEXT UP** — holding page live | HQ | Holding page deployed. Full museum build is next. Timeline content to be sourced from online sources (book not incoming). See §6 for build plan. |
 
 ---
 
@@ -28,10 +30,14 @@
 
 | Step | Action | State | Notes |
 |---|---|---|---|
-| 1 | Build WIP landing page (`index.html`) | **IN PROGRESS** | Raw punk aesthetic, responsive, no JS |
-| 2 | Set up GitHub repo | TODO | Repo name TBD (suggest: `fokofpolisiekar`) |
-| 3 | Configure GitHub Pages | TODO | Serve from repo root or `docs/` — see `README.md` |
-| 4 | Point domain DNS | TODO | fokofpolisiekar.com → GitHub Pages (A/CNAME records) |
+| 1 | Deploy WIP holding page (retire parody) | **DONE** | Holding page deployed 2026-07-31. Parody retired. Includes "Die Band" section with unofficial disclaimer, pasella manifesto, Spotify + .co.za CTAs. |
+| 2 | Source timeline content from online sources | ⬚ | Annie Klopper's *Biografie van 'n bende* not incoming. Use public band history, LitNet archives, album release years, famous band lore. |
+| 3 | Build hero section + pasella manifesto | ⬚ | "As Jy Met Vuur Speel" artwork as hero artifact, "Gooi Man" backstory, pasella 0% revenue note |
+| 4 | Build band ecosystem link hub | ⬚ | FPK official (.co.za), Francois van Coke, Annie Klopper, Fokof Lager, side projects |
+| 5 | Build discography vault with Spotify embeds | ⬚ | 7 albums: As Jy Met Vuur Speel (2003), Lugsteuring (2004), Monoloog in Stereofonie (2005), Swart Melders (2006), Antibotika (2008), Selfmedikasie (2017), Droom Hoog (2023) |
+| 6 | Build interactive timeline (2003–present) | ⬚ | Vertical milestone timeline — Stellenbosch origins through present day |
+| 7 | Responsive pass + accessibility check | ⬚ | Mobile-first, screen-reader friendly |
+| 8 | Verify HTTPS + Cloudflare caching | ⬚ | Confirm cert coverage, edge caching, all URL variants |
 
 ---
 
@@ -48,19 +54,32 @@
 
 | Item | Status | Notes |
 |---|---|---|
-| Build WIP landing page | IN PROGRESS | `index.html` — single-file, inline CSS, punk aesthetic |
-| Set up GitHub repo | TODO | Suggest name: `fokofpolisiekar` |
-| Configure GitHub Pages | TODO | Decide: serve from root or `docs/` folder |
-| Point domain DNS | TODO | fokofpolisiekar.com → GitHub Pages |
-| Content direction for post-launch pages | PARKED | See §6 |
+| Deploy WIP holding page (retire parody) | **DONE** | Deployed 2026-07-31. Commit: "retire parody: deploy Die Informele Museum WIP holding page". Includes band bio + unofficial disclaimer. |
+| Set up GitHub repo + enable Pages | **DONE** | Repo: https://github.com/SoberMountainMan/fokofpolisiekar — Pages LIVE at https://sobermountainman.github.io/fokofpolisiekar/ |
+| Point domain DNS | **DONE** | DNS propagated (cloudoon nameservers via Truehost). Custom domain `fokofpolisiekar.com` set in GitHub Pages. Let's Encrypt cert approved (covers apex + www, expires 2026-10-28). HTTPS enforced. All four URL variants verified working (http/https × apex/www) |
+| Source timeline milestones from online sources | ⬚ TODO | Public band history, LitNet archives, album release years (2003–present), famous band lore (Stellenbosch origins, Witbank wall incident, hiatuses, Van Coke Kartel/Die Heuwels Fantasties spin-offs, reunion shows, Selfmedikasie 2017, Droom Hoog 2023). |
+| Decide on fan nostalgia wall | ⬚ TODO | Phase 2+ feature. Needs backend decision (Formspree or similar). Not blocking Phase 1. |
 
 ---
 
 ## §6 Backlog / Ideas
 
-- Content direction TBD — the name references the famous SA alternative rock band; future content could explore music, culture, alt-scene content. No decisions yet.
-- Post-launch: consider whether this stays a single-page stub or grows into a content site.
 - WildLogic brand site (`wildlogic.co.za`) is a separate asset at HQ level — no cross-pollination planned yet.
+
+### Die Informele Museum — Build Plan
+
+- **Vision:** Unofficial fan archive / digital museum celebrating 20+ years of Fokofpolisiekar and SA rock history.
+- **Origin story:** Band said "Gooi man" when JP offered the domain back to them. Confirmed they're 100% .co.za ("homegrown"). JP (superfan) funding the project.
+- **Tech stack:** Static HTML + Tailwind CSS on GitHub Pages (R0/month hosting). No WordPress, no database, no backend for Phase 1.
+- **Sections:**
+  - Hero + "Gooi Man" backstory — *As Jy Met Vuur Speel* artwork framed as museum artifact, tagline, CTAs to official .co.za and Spotify
+  - Pasella manifesto — explicit 0% revenue cut disclaimer, all links go direct to band/official channels
+  - Band ecosystem link hub — FPK official (.co.za), Francois van Coke, Annie Klopper, Fokof Lager, side projects (Van Coke Kartel, Die Heuwels Fantasties)
+  - Interactive timeline (2003–present) — vertical milestone scroll: Stellenbosch origins, album eras, Witbank wall incident, hiatuses, reunion shows, Selfmedikasie (2017), Droom Hoog (2023)
+  - Discography vault — 7 album cards with embedded Spotify/Apple Music iframe players (zero copyright risk, drives streaming revenue to band)
+  - Fan nostalgia wall — Phase 2+ (needs backend decision: Formspree or similar)
+- **Legal safeguards:** No direct asset hosting (embeds only), zero e-commerce, all merch/ticket CTAs deep-link to fokofpolisiekar.co.za, explicit "unofficial fan archive" disclaimer, pasella manifesto (0% revenue cut).
+- **JP deal structure:** R5k once-off setup + R1k/month maintenance (if we proceed with this deal).
 
 ---
 
@@ -69,3 +88,8 @@
 | Date | Change |
 |---|---|
 | 2026-07-29 | Ledger created. Project seeded by HQ: folder `C:\WildLogic\fokofpolisiekar\`, single-track scope (WIP landing page for fokofpolisiekar.com). HQ-owned directly — no project-orchestrator chat yet. Activation pipeline seeded (build page → GitHub repo → GitHub Pages → DNS). Awaiting: GitHub repo setup, Pages config, domain DNS. |
+| 2026-07-30 | Content rewrite: parody positioning — tagline "Ons hou die domein vas." / "Bring shirts. Baie shirts." GitHub repo created (https://github.com/SoberMountainMan/fokofpolisiekar), code pushed, Pages enabled, CNAME committed. Site LIVE at https://sobermountainman.github.io/fokofpolisiekar/ — custom domain fokofpolisiekar.com pending DNS at Truehost.co.za. Built with Qwen Code. |
+| 2026-07-30 | DNS propagated (cloudoon nameservers via Truehost, registrar NameSilo). Custom domain `fokofpolisiekar.com` set in GitHub Pages. Let's Encrypt cert approved — covers both `fokofpolisiekar.com` and `www.fokofpolisiekar.com`, expires 2026-10-28. HTTPS enforced. All four URL variants verified working: http://fokofpolisiekar.com → 301 → https://fokofpolisiekar.com → 200 OK; https://fokofpolisiekar.com → 200 OK; http://www.fokofpolisiekar.com → 301 → redirect; https://www.fokofpolisiekar.com → 301 → redirect to apex. |
+| 2026-07-31 | Writing standard pointer added per HQ rollout. |
+| 2026-07-31 | **PIVOT DECIDED:** Site pivoting from parody to "Die Informele Museum" — unofficial fan archive for Fokofpolisiekar. Full museum build plan documented in §6. Timeline content to be sourced from online sources (book not incoming). JP funding the project. Parody still live — WIP holding page deployment is next up. |
+| 2026-07-31 | **HOLDING PAGE DEPLOYED.** Parody retired. "Die Informele Museum — Aan Die Bou" WIP page now live at fokofpolisiekar.com. Includes: band bio ("Die Band" section), unofficial/unaffiliated disclaimer, pasella manifesto, Spotify + .co.za CTAs, EP artwork fallback. Commit: `e773221`. |
