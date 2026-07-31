@@ -40,24 +40,13 @@
     .kicker { color: var(--text-muted); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 0.5rem; }
     h1 {
       font-family: 'Bebas Neue', cursive;
-      font-size: clamp(2.2rem, 8vw, 4.5rem);
-      letter-spacing: 2px;
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      letter-spacing: 3px;
       line-height: 0.9;
-      margin-bottom: 0.5rem;
-      color: var(--accent-red);
+      color: #fff;
+      text-shadow: 3px 3px 0px var(--accent-red);
+      text-transform: lowercase;
     }
-    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-      h1 {
-        background: linear-gradient(90deg, #ff4d4d, #ffaa00, #ffd700, #ff4d4d);
-        background-size: 300% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        animation: gradient-shift 4s ease infinite;
-      }
-    }
-    @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
     .quote { font-style: italic; color: var(--accent-red); font-size: 1.1rem; margin-bottom: 2.5rem; }
     .card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); margin-bottom: 2rem; }
     .art-frame { width: 180px; height: 180px; margin: 0 auto 1.5rem auto; border: 3px solid #cc1100; box-shadow: 0 0 25px rgba(255, 42, 42, 0.35), inset 0 0 30px rgba(0, 0, 0, 0.6); background: linear-gradient(160deg, #cc1100 0%, #8b0000 40%, #1a0000 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
@@ -127,13 +116,13 @@
     <header>
       <div class="kicker">"Some revolutions are worth keeping alive..."</div>
       <h1>fokofpolisiekar.com</h1>
+      <div class="backstory">
+        <p><strong>Die Storie / The Story:</strong></p>
+        <p>Ons het die domein gekoop om dit terug te gee. Hulle het ges&ecirc;: <em>&ldquo;Laat hom gaan, ons is 100% homegrown .co.za.&rdquo;</em></p>
+        <p>Toe verander ons hom maar in &rsquo;n museum.</p>
+        <p class="en-translation">We bought the domain to give it back. They said: &ldquo;Let it go, we&rsquo;re 100% homegrown .co.za.&rdquo; So we turned it into a museum.</p>
+      </div>
     </header>
-    <div class="backstory">
-      <p><strong>Die Storie / The Story:</strong></p>
-      <p>Ons het die domein gekoop om dit terug te gee. Hulle het ges&ecirc;: <em>&ldquo;Laat hom gaan, ons is 100% homegrown .co.za.&rdquo;</em></p>
-      <p>Toe verander ons hom maar in &rsquo;n museum.</p>
-      <p class="en-translation">We bought the domain to give it back. They said: &ldquo;Let it go, we&rsquo;re 100% homegrown .co.za.&rdquo; So we turned it into a museum.</p>
-    </div>
     <main class="card">
       <div class="art-frame">
         <div class="art-placeholder">
@@ -196,7 +185,7 @@
       </section>
       <div class="pasella-note">💡 <strong>Pasella Kennisgewing:</strong> Alle skakels is pasella. 0% kommissie. 100% van strome en verkeer gaan direk na die band en amptelike kanale.</div>
     </main>
-    <footer>'n <a href="https://wildlogic.co.za" target="_blank" rel="noopener">WildLogic</a> argief-projek</footer>
+    <footer>A <a href="https://github.com/WildLogic" target="_blank" rel="noopener">WildLogic</a> archive project</footer>
   </div>
 </body>
 </html>
