@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fokofpolisiekar.com — Domein Gyseling</title>
+  <title>fokofpolisiekar.com — 'n Bellville Liefdesbrief</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -320,7 +320,7 @@
   <div class="container">
       
     <div class="banner" id="topBanner">
-      ⚠ DOMEIN-GYSELING ⚠
+      ⚠ DOMEIN-PARKEERPLEK ⚠
     </div>
 
     <header>
@@ -332,34 +332,24 @@
 
     <main class="card">
         
-      <p class="af-text">Hierdie is 'n monoloog op 'n gesteelde IP-adres.</p>
+      <p class="af-text"><em>"Hierdie is net 'n tydelike parkeerplek vir 'n goeie domein."</em></p>
       <p class="en-text">
-        This is not the band. This is not their website. François, Hunter, Wynand, Jaco, and Johnny probably haven't even noticed this exists yet.
+        <em>"This is an unofficial fan tribute and landing page. We hold zero commercial intentions and will happily transfer this domain to the band for free whenever their team reaches out."</em>
       </p>
 
-      <p class="af-text">Hierdie is 'n parodie. 'n Grap. 'n Bellville-styl domein-gyseling.</p>
-      <p class="en-text">
-        A pure parody. No malice, just creative domain squatting for a cause.
-      </p>
-
-      <p class="af-text">Is julle tevrede? Ons is nog nie.</p>
-      <p class="en-text">
-        If you want the DNS records transferred back, we have one simple demand:
-      </p>
-
-      <div class="checklist-title">DIE LYS VAN EISEN</div>
+      <div class="checklist-title">DIE OPTIONELE FOETSKRIF WENS-LYS</div>
 
       <!-- Interactive Progress Bar Component -->
       <div class="progress-box">
         <div class="progress-meta">
-          <span class="progress-label">Ransom Status</span>
-          <span class="progress-counter" id="progressCounter">0 / 4 EISE NAGEKOM (0%)</span>
+          <span class="progress-label">Donasie Status</span>
+          <span class="progress-counter" id="progressCounter">0 / 4 FAN-WENSE HERKENG (0%)</span>
         </div>
         <div class="progress-track">
           <div class="progress-fill" id="progressFill"></div>
         </div>
         <div class="progress-status" id="progressStatus">
-          Klik die eise hieronder soos merch bevestig word...
+          Klik die wense hieronder soos merch bevestig word...
         </div>
       </div>
 
@@ -378,13 +368,14 @@
         </li>
         <li>
           <input type="checkbox" id="item4">
-          <label for="item4">1x Hunter Venter se handtekening op 'n viltie</label>
+          <label for="item4">1x Hunter Kennedy se handtekening op 'n viltie</label>
         </li>
       </ul>
 
       <div class="disclaimer">
-        <strong>PARODIE / NO HARD FEELINGS.</strong><br>
-        Hierdie webwerf is nie geaffilieer met, goedgekeur deur, of verbind aan Fokofpolisiekar, enige bandlid, Wynberg-polisie, of enige verwante entiteit nie. No copyright infringement intended. All rights belong to their respective owners.
+        <strong>PARODIE / NIE-AMPTELIK / NO MALICE.</strong><br>
+        Hierdie webwerf is 'n nie-kommersiële parodie en is nie geaffilieer met, goedgekeur deur, of verbonde aan Fokofpolisiekar of hul bestuur nie. Alle handelsmerke en kopiereg behoort aan hul onderskeie eienaars.<br><br>
+        <em>Nota aan die band: Die domein is julle s'n sodra julle vra (geen koste/voorwaardes nie). Die t-hemde en bier is suiwer opsionele goeie wil!</em>
       </div>
 
     </main>
@@ -404,11 +395,11 @@
       const topBanner = document.getElementById('topBanner');
 
       const statusMessages = {
-        0: "Domein is stilstaande en veilig in gyseling.",
+        0: "Domein is stilstaande en wag op die band se oproep.",
         25: "Eerste hitte opgemerk! Die span beweeg...",
-        50: "Halfpad na vryheid! Die bier is op ys.",
+        50: "Halfpad! Die bier is op ys.",
         75: "Byna daar! Wynand soek reeds sy hoodie...",
-        100: "100% NAGEKOM! 'Hemel op die Platteland' speel kliphard! 🍻🔥"
+        100: "100% WENS-LYS VOLTOOI! 'Hemel op die Platteland' speel kliphard! 🍻🔥"
       };
 
       function updateProgress() {
@@ -417,14 +408,14 @@
         const percentage = Math.round((checkedCount / total) * 100);
 
         progressFill.style.width = percentage + '%';
-        progressCounter.textContent = `${checkedCount} / ${total} EISE NAGEKOM (${percentage}%)`;
-        progressStatus.textContent = statusMessages[percentage] || `${percentage}% van eise nagekom.`;
+        progressCounter.textContent = `${checkedCount} / ${total} FAN-WENSE HERKENG (${percentage}%)`;
+        progressStatus.textContent = statusMessages[percentage] || `${percentage}% van wense herken.`;
 
         if (percentage === 100) {
           progressFill.style.backgroundColor = "var(--accent-green)";
           progressCounter.style.color = "var(--accent-green)";
 
-          topBanner.textContent = "⚡ DOMEIN VRYGEGEE — MERCH GEASSEKUREER! ⚡";
+          topBanner.textContent = "⚡ WENS-LYS VOLTOOI — DOMEIN IS JULLS'N! ⚡";
           topBanner.style.background = "var(--accent-green)";
           topBanner.style.color = "#000";
 
@@ -432,7 +423,7 @@
           progressFill.style.backgroundColor = "var(--accent-red)";
           progressCounter.style.color = "var(--accent-red)";
 
-          topBanner.textContent = "⚠ DOMEIN-GYSELING ⚠";
+          topBanner.textContent = "⚠ DOMEIN-PARKEERPLEK ⚠";
           topBanner.style.background = "var(--accent-red)";
           topBanner.style.color = "#000";
         }
