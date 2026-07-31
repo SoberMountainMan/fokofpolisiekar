@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fokofpolisiekar.com — Die Informele Museum (Aan Die Bou)</title>
+  <title>fokofpolisiekar.com — Die Informele Museum</title>
+  <meta name="description" content="Onoffisiële web-museum en argief ter viering van 20+ jaar Fokofpolisiekar. Diskografie, tydlyn, en skakels. An unofficial fan archive celebrating 20+ years of Fokofpolisiekar.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://i.scdn.co" crossorigin>
@@ -13,7 +15,7 @@
     :root {
       --bg-color: #0a0a0a;
       --card-bg: #141414;
-      --accent-red: #ff2a2a;
+      --accent-red: #ff3333;
       --text-main: #e0e0e0;
       --text-muted: #888888;
       --border-color: #262626;
@@ -44,19 +46,6 @@
       text-align: center;
     }
 
-    .status-badge {
-      display: inline-block;
-      background: rgba(255, 42, 42, 0.15);
-      color: var(--accent-red);
-      border: 1px solid var(--accent-red);
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      letter-spacing: 2px;
-      font-size: 0.85rem;
-      margin-bottom: 2rem;
-    }
-
     .kicker {
       color: var(--text-muted);
       text-transform: uppercase;
@@ -71,7 +60,7 @@
       letter-spacing: 2px;
       line-height: 0.9;
       margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #ff2a2a, #ff8c00, #ffd700, #ff2a2a);
+      background: linear-gradient(90deg, #ff3333, #ff8c00, #ffd700, #ff3333);
       background-size: 300% 100%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -303,6 +292,10 @@
     }
     @media (max-width: 480px) {
       .link-hub { grid-template-columns: 1fr; }
+      .timeline-track { padding-left: 1.25rem; }
+      .milestone::before { left: calc(-1.25rem - 5px); }
+      .milestone { margin-bottom: 1.25rem; }
+      .card { padding: 1.25rem; }
     }
 
     /* Discography Vault */
@@ -461,10 +454,6 @@
 <body>
 
   <div class="container">
-      
-    <div class="status-badge">
-      ⚙ AAN DIE BOU / WORK IN PROGRESS
-    </div>
 
     <header>
       <div class="kicker">"Some revolutions are worth keeping alive..."</div>
