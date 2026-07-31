@@ -244,6 +244,65 @@
       margin-top: 1rem;
     }
 
+    /* Backstory */
+    .backstory {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      padding: 0 0.5rem;
+    }
+    .backstory p { margin-bottom: 0.6rem; }
+    .backstory em { color: var(--text-main); }
+    .en-translation {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      opacity: 0.75;
+      font-style: normal;
+    }
+
+    /* Link Hub */
+    .link-hub {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .link-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      text-decoration: none;
+      color: var(--text-main);
+      text-align: left;
+      transition: border-color 0.2s ease;
+      display: block;
+    }
+    .link-card:hover {
+      border-color: var(--accent-red);
+    }
+    .link-card-name {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.1rem;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+    .link-card-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+    .link-card-arrow {
+      font-size: 0.85rem;
+      color: var(--accent-red);
+    }
+    @media (max-width: 480px) {
+      .link-hub { grid-template-columns: 1fr; }
+    }
+
     footer {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -266,6 +325,13 @@
       <h1>fokofpolisiekar.com</h1>
       <div class="quote">"Dink jy 'n man op die domein is 'n goeie idee?"</div>
     </header>
+
+    <div class="backstory">
+      <p><strong>Die Storie / The Story:</strong></p>
+      <p>Ons het die domein gekoop om dit terug te gee. Hulle het ges&ecirc;: <em>&ldquo;Laat hom gaan, ons is 100% homegrown .co.za.&rdquo;</em></p>
+      <p>Toe verander ons hom maar in &rsquo;n museum.</p>
+      <p class="en-translation">We bought the domain to give it back. They said: &ldquo;Let it go, we&rsquo;re 100% homegrown .co.za.&rdquo; So we turned it into a museum.</p>
+    </div>
 
     <main class="card">
         
@@ -303,6 +369,40 @@
         </a>
         <a href="https://open.spotify.com/artist/5X4B32J3xPjG5V74lKkH2o" target="_blank" rel="noopener" class="btn">
           LUISTER OP SPOTIFY
+        </a>
+      </div>
+
+      <!-- EDIT: Band Ecosystem Link Hub -->
+      <div class="link-hub">
+        <a href="https://fokofpolisiekar.co.za" target="_blank" rel="noopener" class="link-card">
+          <div class="link-card-name">Fokofpolisiekar Amptelik</div>
+          <div class="link-card-desc">Official site, tickets, merch</div>
+          <span class="link-card-arrow">&rarr;</span>
+        </a>
+        <a href="https://www.francoisvancoke.co.za" target="_blank" rel="noopener" class="link-card">
+          <div class="link-card-name">Francois van Coke</div>
+          <div class="link-card-desc">Solo career</div>
+          <span class="link-card-arrow">&rarr;</span>
+        </a>
+        <a href="https://www.litnet.co.za/biografie-van-n-bende-fokof-we-ll-piss-where-we-want/" target="_blank" rel="noopener" class="link-card">
+          <div class="link-card-name">Annie Klopper</div>
+          <div class="link-card-desc"><em>Biografie van &rsquo;n Bende</em> author</div>
+          <span class="link-card-arrow">&rarr;</span>
+        </a>
+        <a href="https://www.fokoflager.com" target="_blank" rel="noopener" class="link-card">
+          <div class="link-card-name">Fokof Lager</div>
+          <div class="link-card-desc">Craft beer</div>
+          <span class="link-card-arrow">&rarr;</span>
+        </a>
+        <a href="https://www.facebook.com/vancokokartel/" target="_blank" rel="noopener" class="link-card">
+          <div class="link-card-name">Van Coke Kartel</div>
+          <div class="link-card-desc">Side project</div>
+          <span class="link-card-arrow">&rarr;</span>
+        </a>
+        <a href="https://www.dieheuwels.co.za" target="_blank" rel="noopener" class="link-card">
+          <div class="link-card-name">Die Heuwels Fantasties</div>
+          <div class="link-card-desc">Side project</div>
+          <span class="link-card-arrow">&rarr;</span>
         </a>
       </div>
 
