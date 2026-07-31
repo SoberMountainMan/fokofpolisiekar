@@ -22,7 +22,7 @@
 | Track | Scope | State | Owner | Notes |
 |---|---|---|---|---|
 | WIP holding page deployment | Replace parody with "Aan die Bou" holding page at fokofpolisiekar.com | **DONE** | HQ | Deployed 2026-07-31. Parody retired. Includes "Die Band" section with unofficial disclaimer, pasella manifesto, Spotify + .co.za CTAs. |
-| Die Informele Museum (full build) | Multi-section static fan archive — hero, pasella manifesto, band ecosystem hub, discography vault, interactive timeline | **NEXT UP** — holding page live | HQ | Holding page deployed. Full museum build is next. Timeline content to be sourced from online sources (book not incoming). See §6 for build plan. |
+| Die Informele Museum (full build) | Multi-section static fan archive — hero, pasella manifesto, band ecosystem hub, discography vault, interactive timeline | **IN PROGRESS** — Steps 1-3 done | HQ | Backstory, link hub, and discography vault deployed. Timeline and responsive/accessibility passes remaining. |
 
 ---
 
@@ -32,9 +32,9 @@
 |---|---|---|---|
 | 1 | Deploy WIP holding page (retire parody) | **DONE** | Holding page deployed 2026-07-31. Parody retired. Includes "Die Band" section with unofficial disclaimer, pasella manifesto, Spotify + .co.za CTAs. |
 | 2 | Source timeline content from online sources | ⬚ | Annie Klopper's *Biografie van 'n bende* not incoming. Use public band history, LitNet archives, album release years, famous band lore. |
-| 3 | Build hero section + pasella manifesto | ⬚ | "As Jy Met Vuur Speel" artwork as hero artifact, "Gooi Man" backstory, pasella 0% revenue note |
-| 4 | Build band ecosystem link hub | ⬚ | FPK official (.co.za), Francois van Coke, Annie Klopper, Fokof Lager, side projects |
-| 5 | Build discography vault with Spotify embeds | ⬚ | 7 albums: As Jy Met Vuur Speel (2003), Lugsteuring (2004), Monoloog in Stereofonie (2005), Swart Melders (2006), Antibotika (2008), Selfmedikasie (2017), Droom Hoog (2023) |
+| 3 | Build hero section + pasella manifesto | **DONE** | Backstory ("Die Storie"), EP artwork frame, museum archive section, pasella note. Steps 1-3 of museum build complete (backstory, link hub, discography vault). |
+| 4 | Build band ecosystem link hub | **DONE** | 6 link cards: FPK official, Francois van Coke, Annie Klopper, Fokof Lager, Van Coke Kartel, Die Heuwels Fantasties. |
+| 5 | Build discography vault with Spotify embeds | **DONE** | 7 albums with corrected names: As Jy Met Vuur Speel Sal Jy Brand (2003), Lugsteuring (2004), Monoloog In Stereo (2005), Swanesang (2006), Antibiotika (2008), Selfmedikasie (2017), Dans Deur Die Donker (2023). All Spotify embeds lazy-loaded. Apple Music links. Container widened to 900px. Commit: `319e533`. |
 | 6 | Build interactive timeline (2003–present) | ⬚ | Vertical milestone timeline — Stellenbosch origins through present day |
 | 7 | Responsive pass + accessibility check | ⬚ | Mobile-first, screen-reader friendly |
 | 8 | Verify HTTPS + Cloudflare caching | ⬚ | Confirm cert coverage, edge caching, all URL variants |
@@ -93,3 +93,4 @@
 | 2026-07-31 | Writing standard pointer added per HQ rollout. |
 | 2026-07-31 | **PIVOT DECIDED:** Site pivoting from parody to "Die Informele Museum" — unofficial fan archive for Fokofpolisiekar. Full museum build plan documented in §6. Timeline content to be sourced from online sources (book not incoming). JP funding the project. Parody still live — WIP holding page deployment is next up. |
 | 2026-07-31 | **HOLDING PAGE DEPLOYED.** Parody retired. "Die Informele Museum — Aan Die Bou" WIP page now live at fokofpolisiekar.com. Includes: band bio ("Die Band" section), unofficial/unaffiliated disclaimer, pasella manifesto, Spotify + .co.za CTAs, EP artwork fallback. Commit: `18a7dce`. |
+| 2026-07-31 | **MUSEUM BUILD STEPS 1-3 DEPLOYED.** Step 1: Backstory ("Die Storie") added. Step 2: Band ecosystem link hub (6 cards). Step 3: Discography vault — 7 album cards with Spotify embeds (lazy-loaded) + Apple Music links. Album name corrections applied (Monoloog In Stereo, Swanesang, Dans Deur Die Donker). Container widened to 900px for 2-col grid. Performance: all images have loading="lazy" decoding="async" fetchpriority="low", preconnect to i.scdn.co. Commit: `319e533`. |
