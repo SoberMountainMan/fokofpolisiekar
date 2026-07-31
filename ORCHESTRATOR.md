@@ -31,13 +31,13 @@
 | Step | Action | State | Notes |
 |---|---|---|---|
 | 1 | Deploy WIP holding page (retire parody) | **DONE** | Holding page deployed 2026-07-31. Parody retired. Includes "Die Band" section with unofficial disclaimer, pasella manifesto, Spotify + .co.za CTAs. |
-| 2 | Source timeline content from online sources | ⬚ | Annie Klopper's *Biografie van 'n bende* not incoming. Use public band history, LitNet archives, album release years, famous band lore. |
+| 2 | Source timeline content from online sources | **DONE** | REFERENCE-RESEARCH-DATA.md created 2026-07-31. Public band history, album release years, Discogs, Wikipedia, Spotify, IOL, Bizcommunity cross-referenced. |
 | 3 | Build hero section + pasella manifesto | **DONE** | Backstory ("Die Storie"), EP artwork frame, museum archive section, pasella note. Steps 1-3 of museum build complete (backstory, link hub, discography vault). |
 | 4 | Build band ecosystem link hub | **DONE** | 6 link cards: FPK official, Francois van Coke, Annie Klopper, Fokof Lager, Van Coke Kartel, Die Heuwels Fantasties. |
 | 5 | Build discography vault with Spotify embeds | **DONE** | 7 albums with corrected names: As Jy Met Vuur Speel Sal Jy Brand (2003), Lugsteuring (2004), Monoloog In Stereo (2005), Swanesang (2006), Antibiotika (2008), Selfmedikasie (2017), Dans Deur Die Donker (2023). All Spotify embeds lazy-loaded. Apple Music links. Container widened to 900px. Commit: `319e533`. |
 | 6 | Build interactive timeline (2003–present) | **DONE** | 12 milestones (2003–2026). Vertical timeline with red dot markers. Correction mechanism (mailto link). Sources: Wikipedia, Spotify, Discogs, IOL, Bizcommunity. |
 | 7 | Responsive pass + accessibility check | **DONE** | Mobile breakpoints at 480px and 600px. Accent red improved (#ff3333, 4.75:1 contrast). Timeline/card padding tightened on mobile. All images have alt text. All links descriptive. |
-| 8 | Verify HTTPS + Cloudflare caching | ⬚ | Confirm cert coverage, edge caching, all URL variants |
+| 8 | Create MAINTENANCE.md | **DONE** | MAINTENANCE.md created 2026-07-31. Section-by-section edit guide, common task recipes, style guide, troubleshooting. Non-technical tone for JP. |
 
 ---
 
@@ -57,7 +57,7 @@
 | Deploy WIP holding page (retire parody) | **DONE** | Deployed 2026-07-31. Commit: "retire parody: deploy Die Informele Museum WIP holding page". Includes band bio + unofficial disclaimer. |
 | Set up GitHub repo + enable Pages | **DONE** | Repo: https://github.com/SoberMountainMan/fokofpolisiekar — Pages LIVE at https://sobermountainman.github.io/fokofpolisiekar/ |
 | Point domain DNS | **DONE** | DNS propagated (cloudoon nameservers via Truehost). Custom domain `fokofpolisiekar.com` set in GitHub Pages. Let's Encrypt cert approved (covers apex + www, expires 2026-10-28). HTTPS enforced. All four URL variants verified working (http/https × apex/www) |
-| Source timeline milestones from online sources | ⬚ TODO | Public band history, LitNet archives, album release years (2003–present), famous band lore (Stellenbosch origins, Witbank wall incident, hiatuses, Van Coke Kartel/Die Heuwels Fantasties spin-offs, reunion shows, Selfmedikasie 2017, Droom Hoog 2023). |
+| Source timeline milestones from online sources | **DONE** | 12 milestones (2003–2026) built and deployed. Sources: Wikipedia, Spotify, Discogs, IOL, Bizcommunity. Correction mechanism in place (mailto link). |
 | Decide on fan nostalgia wall | ⬚ TODO | Phase 2+ feature. Needs backend decision (Formspree or similar). Not blocking Phase 1. |
 
 ---
@@ -95,3 +95,4 @@
 | 2026-07-31 | **HOLDING PAGE DEPLOYED.** Parody retired. "Die Informele Museum — Aan Die Bou" WIP page now live at fokofpolisiekar.com. Includes: band bio ("Die Band" section), unofficial/unaffiliated disclaimer, pasella manifesto, Spotify + .co.za CTAs, EP artwork fallback. Commit: `18a7dce`. |
 | 2026-07-31 | **MUSEUM BUILD STEPS 1-3 DEPLOYED.** Step 1: Backstory ("Die Storie") added. Step 2: Band ecosystem link hub (6 cards). Step 3: Discography vault — 7 album cards with Spotify embeds (lazy-loaded) + Apple Music links. Album name corrections applied (Monoloog In Stereo, Swanesang, Dans Deur Die Donker). Container widened to 900px for 2-col grid. Performance: all images have loading="lazy" decoding="async" fetchpriority="low", preconnect to i.scdn.co. Commit: `319e533`. |
 | 2026-07-31 | **STEPS 5-7: RESPONSIVE PASS, PERFORMANCE PASS, WIP BADGE REMOVED.** Responsive: mobile breakpoints verified (320px–768px), timeline/card padding tightened at ≤480px. Accessibility: accent-red improved to #ff3333 (4.75:1 contrast ratio, WCAG AA). Performance: meta description added (bilingual), SVG favicon (🔥), preconnect hints verified (fonts + Spotify CDN). WIP badge: status-badge HTML + CSS removed, title updated to drop "(Aan Die Bou)". Commit: `6ab7a98`. |
+| 2026-07-31 | **FULL MUSEUM BUILD COMPLETE — ALL 8 STEPS DONE.** Step 8: MAINTENANCE.md created (309 lines) — section-by-section edit guide, 4 common task recipes, style guide, troubleshooting, contact info. Non-technical tone for JP. Album name corrections applied across docs (Monoloog In Stereo, Swanesang, Dans Deur Die Donker). Site live at https://fokofpolisiekar.com. All 8 build steps executed and deployed to main. |

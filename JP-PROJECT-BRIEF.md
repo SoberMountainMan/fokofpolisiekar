@@ -34,14 +34,14 @@ A clean grid of cards linking to the full Fokof universe:
 All 7 albums with embedded Spotify players so fans can stream directly from the site:
 1. *As Jy Met Vuur Speel* (2003)
 2. *Lugsteuring* (2004)
-3. *Monoloog in Stereofonie* (2005)
-4. *Swart Melders* (2006)
+3. *Monoloog In Stereo* (2005)
+4. *Swanesang* (2006)
 5. *Antibiotika* (2008)
 6. *Selfmedikasie* (2017)
-7. *Droom Hoog* (2023)
+7. *Dans Deur Die Donker* (2023)
 
 ### Interactive Timeline (2003–Present)
-Key milestones in band history — from the Stellenbosch garage sessions to *Droom Hoog* — presented as a clean vertical scroll. Sourced from public records and cross-referenced for accuracy.
+Key milestones in band history — from the Stellenbosch garage sessions to *Dans Deur Die Donker* — presented as a clean vertical scroll. Sourced from public records and cross-referenced for accuracy.
 
 ---
 
