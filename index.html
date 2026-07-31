@@ -3,191 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fokofpolisiekar.com — Die Informele Museum</title>
-  <meta name="description" content="Onoffisiële web-museum en argief ter viering van 20+ jaar Fokofpolisiekar. Diskografie, tydlyn, en skakels. An unofficial fan archive celebrating 20+ years of Fokofpolisiekar.">
+  <title>fokofpolisiekar.com — Binnekort</title>
+  <meta name="description" content="Die Informele Museum kry 'n nuwe tuis. The museum is getting a new home. Binnekort / Coming soon.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://i.scdn.co" crossorigin>
-  <link rel="preconnect" href="https://open.spotify.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-color: #0a0a0a;
-      --card-bg: #141414;
-      --accent-red: #ff4d4d;
-      --text-main: #e0e0e0;
-      --text-muted: #888888;
-      --border-color: #262626;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: 'Courier Prime', monospace;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 1rem;
-      background-image:
-        radial-gradient(circle at 50% 100%, rgba(255, 42, 42, 0.1), transparent 70%),
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.5) 3px);
-    }
-    .container { max-width: 900px; width: 100%; margin: 0 auto; text-align: center; }
-    .kicker { color: var(--text-muted); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 0.5rem; }
-    h1 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(2.2rem, 8vw, 4.5rem);
-      letter-spacing: 2px;
-      line-height: 0.9;
-      margin-bottom: 0.5rem;
-      color: var(--accent-red);
-    }
-    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-      h1 {
-        background: linear-gradient(90deg, #ff4d4d, #ffaa00, #ffd700, #ff4d4d);
-        background-size: 300% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        animation: gradient-shift 4s ease infinite;
-      }
-    }
-    @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-    .quote { font-style: italic; color: var(--accent-red); font-size: 1.1rem; margin-bottom: 2.5rem; }
-    .card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); margin-bottom: 2rem; }
-    .art-frame { width: 180px; height: 180px; margin: 0 auto 1.5rem auto; border: 3px solid #cc1100; box-shadow: 0 0 25px rgba(255, 42, 42, 0.35), inset 0 0 30px rgba(0, 0, 0, 0.6); background: linear-gradient(160deg, #cc1100 0%, #8b0000 40%, #1a0000 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
-    .art-frame::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px); pointer-events: none; z-index: 1; }
-    .art-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .museum-title { font-family: 'Bebas Neue', cursive; font-size: 2rem; letter-spacing: 1px; color: #fff; margin-bottom: 0.5rem; }
-    p { margin-bottom: 1.2rem; font-size: 0.95rem; }
-    p strong { color: #fff; }
-    .btn-group { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
-    .btn { display: block; width: 100%; background: transparent; color: #fff; border: 1px solid var(--border-color); font-family: 'Bebas Neue', cursive; font-size: 1.3rem; letter-spacing: 2px; padding: 0.75rem; text-decoration: none; transition: all 0.2s ease; }
-    .btn-primary { border-color: var(--accent-red); color: var(--accent-red); }
-    .btn-primary:hover { background: var(--accent-red); color: #000; box-shadow: 0 0 15px rgba(255, 42, 42, 0.4); }
-    .btn:hover:not(.btn-primary) { border-color: #fff; }
-    .pasella-note { font-size: 0.8rem; color: var(--text-muted); border-top: 1px dashed var(--border-color); padding-top: 1rem; margin-top: 1.5rem; }
-    .band-section { text-align: left; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
-    .band-section h2 { font-family: 'Bebas Neue', cursive; font-size: 1.5rem; letter-spacing: 1px; color: #fff; margin-bottom: 0.75rem; }
-    .band-section p { font-size: 0.9rem; margin-bottom: 0.75rem; }
-    .disclaimer-text { font-size: 0.8rem; color: var(--text-muted); font-style: italic; border-left: 2px solid var(--accent-red); padding-left: 0.75rem; margin-top: 1rem; }
-    .backstory { text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; padding: 0 0.5rem; }
-    .backstory p { margin-bottom: 0.6rem; }
-    .backstory em { color: var(--text-main); }
-    .en-translation { font-size: 0.8rem; color: var(--text-muted); opacity: 0.75; font-style: normal; }
-    .link-hub { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; margin-bottom: 1.5rem; }
-    .link-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 1rem; text-decoration: none; color: var(--text-main); text-align: left; transition: border-color 0.2s ease; display: block; }
-    .link-card:hover { border-color: var(--accent-red); }
-    .link-card-name { font-family: 'Bebas Neue', cursive; font-size: 1.1rem; color: #fff; letter-spacing: 1px; margin-bottom: 0.25rem; }
-    .link-card-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.4rem; }
-    .link-card-arrow { font-size: 0.85rem; color: var(--accent-red); }
-    @media (max-width: 480px) { .link-hub { grid-template-columns: 1fr; } .timeline-track { padding-left: 1.25rem; } .milestone::before { left: calc(-1.25rem - 5px); } .milestone { margin-bottom: 1.25rem; } .card { padding: 1.25rem; } }
-    .discography { text-align: left; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
-    .discography h2 { font-family: 'Bebas Neue', cursive; font-size: 1.8rem; letter-spacing: 1px; color: #fff; text-align: center; margin-bottom: 1.25rem; }
-    .disco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .disco-card { background: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); overflow: hidden; transition: border-color 0.2s ease; }
-    .disco-card:hover { border-color: var(--accent-red); }
-    .disco-art { aspect-ratio: 1 / 1; overflow: hidden; background: #111; }
-    .disco-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .disco-info { padding: 0.85rem; }
-    .disco-info h3 { font-family: 'Bebas Neue', cursive; font-size: 1.15rem; color: #fff; letter-spacing: 1px; line-height: 1.2; margin-bottom: 0.15rem; }
-    .disco-year { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.6rem; }
-    .disco-embed { margin-bottom: 0.5rem; }
-    .disco-link { display: inline-block; font-size: 0.8rem; color: var(--accent-red); text-decoration: none; transition: color 0.2s ease; }
-    .disco-link:hover { color: #fff; }
-    @media (max-width: 600px) { .disco-grid { grid-template-columns: 1fr; } }
-    .timeline { text-align: left; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
-    .timeline h2 { font-family: 'Bebas Neue', cursive; font-size: 1.8rem; letter-spacing: 1px; color: #fff; text-align: center; margin-bottom: 1.5rem; }
-    .timeline-track { position: relative; padding-left: 1.75rem; border-left: 2px solid var(--border-color); }
-    .milestone { position: relative; margin-bottom: 1.75rem; }
-    .milestone:last-child { margin-bottom: 0; }
-    .milestone::before { content: ''; position: absolute; left: calc(-1.75rem - 5px); top: 0.35rem; width: 10px; height: 10px; background: var(--accent-red); border-radius: 50%; box-shadow: 0 0 8px rgba(255, 42, 42, 0.5); }
-    .milestone-year { font-family: 'Bebas Neue', cursive; font-size: 1.25rem; color: var(--accent-red); letter-spacing: 1px; line-height: 1.2; margin-bottom: 0.15rem; }
-    .milestone-content { font-size: 0.88rem; color: var(--text-main); line-height: 1.5; }
-    .timeline-sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px dashed var(--border-color); text-align: center; }
-    .timeline-sources p { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0; }
-    .timeline-sources a { color: var(--accent-red); text-decoration: none; }
-    .timeline-sources a:hover { text-decoration: underline; }
-    footer { font-size: 0.85rem; color: var(--text-muted); }
-    footer a { color: var(--text-main); text-decoration: none; }
-    footer a:hover { color: var(--accent-red); }
+    :root { --bg:#0a0a0e; --accent:#ff4d4d; --accent-2:#ff8800; --text:#e8e8e8; --muted:#9a9aa2; --border:#26262e; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.6; min-height:100vh; display:flex; flex-direction:column; }
+    .hero { position:relative; flex:1; display:flex; align-items:flex-end; justify-content:center; background-color:#f2ede4; background-image:url('assets/cover1.jpg'); background-size:cover; background-position:center top; }
+    .hero-scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,14,0) 25%, rgba(10,10,14,0.55) 60%, rgba(10,10,14,0.95) 100%); }
+    .hero-content { position:relative; text-align:center; padding:2rem 1rem 3rem; max-width:900px; }
+    h1 { font-family:'Anton',sans-serif; font-size:clamp(3.2rem,12vw,7rem); line-height:0.95; text-transform:uppercase; letter-spacing:2px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; margin-bottom:1rem; }
+    .badge { display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); border-radius:3px; padding:0.45rem 1.2rem; margin-bottom:1.25rem; box-shadow:0 0 18px rgba(255,77,77,0.25); }
+    .teaser { font-size:1.05rem; font-style:italic; color:#fff; margin-bottom:0.4rem; }
+    .teaser-en { font-size:0.85rem; color:var(--muted); margin-bottom:2rem; }
+    .btn-group { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn { display:inline-block; font-family:'Anton',sans-serif; font-size:1.05rem; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:0.7rem 1.6rem; border:1px solid var(--border); color:#fff; transition:all 0.2s ease; }
+    .btn-primary { border-color:var(--accent); color:var(--accent); }
+    .btn-primary:hover { background:var(--accent); color:#000; box-shadow:0 0 18px rgba(255,77,77,0.4); }
+    .btn:hover:not(.btn-primary) { border-color:#fff; }
+    .legal { font-size:0.72rem; color:var(--muted); font-style:italic; margin-top:2rem; }
+    footer { text-align:center; padding:1.25rem 1rem; font-size:0.78rem; color:var(--muted); border-top:1px solid var(--border); }
+    footer a { color:var(--text); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="kicker">"Some revolutions are worth keeping alive..."</div>
-      <h1>fokofpolisiekar.com</h1>
-      <div class="backstory">
-        <p><strong>Die Storie / The Story:</strong></p>
-        <p>Ons het die domein gekoop om dit terug te gee. Hulle het ges&ecirc;: <em>&ldquo;Laat hom gaan, ons is 100% homegrown .co.za.&rdquo;</em></p>
-        <p>Toe verander ons hom maar in &rsquo;n museum.</p>
-        <p class="en-translation">We bought the domain to give it back. They said: &ldquo;Let it go, we&rsquo;re 100% homegrown .co.za.&rdquo; So we turned it into a museum.</p>
-      </div>
-    </header>
-    <main class="card">
-      <div class="art-frame">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Fokofpolisiekar_-_As_jy_met_vuur_speel_sal_jy_brand.jpg" alt="As Jy Met Vuur Speel Sal Jy Brand cover artwork" loading="eager" decoding="async" onerror="this.style.display='none'">
-      </div>
-      <div class="museum-title">DIE INFORMELE MUSEUM ARCHIVE</div>
-      <p>Ons is besig om hierdie domein te omskep in 'n informele web-museum en argief ter viering van 20+ jaar van <strong>Fokofpolisiekar</strong> en Suid-Afrikaanse rock-geskiedenis.</p>
-      <div class="band-section">
-        <h2>DIE BAND</h2>
-        <p><strong>Fokofpolisiekar</strong> is 'n Afrikaanse rock-band vanuit Bellville, Wes-Kaap. Aktief sedert 2003. Sewe ateljeealbums. Die stem van 'n generasie.</p>
-        <p>Hierdie webwerf is 'n onafhanklike fan-argief. Nie geaffilieer met, goedgekeur deur, of verbonde aan Fokofpolisiekar, hul bestuur, of hul plate-etiket nie.</p>
-        <p class="disclaimer-text">Alle handelsmerke, album-kunswerk, en musiek behoort aan die onderskeie eienaars. Hierdie site huisves geen kopieregmateriaal nie — alle skakels verwys na amptelike kanale.</p>
-      </div>
+  <div class="hero">
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <h1>Fokofpolisiekar</h1>
+      <div class="badge">Binnekort / Coming Soon</div>
+      <p class="teaser">Die Informele Museum kry 'n nuwe tuis.</p>
+      <p class="teaser-en">The museum is getting a new home.</p>
       <div class="btn-group">
-        <a href="https://fokofpolisiekar.co.za" target="_blank" rel="noopener" class="cta-button btn btn-primary">BESOEK DIE AMPTELIKE WEBWERF (.CO.ZA)</a>
-        <a href="https://open.spotify.com/artist/5X4B32J3xPjG5V74lKkH2o" target="_blank" rel="noopener" class="btn">LUISTER OP SPOTIFY</a>
+        <a href="https://fokofpolisiekar.co.za" target="_blank" rel="noopener" class="btn btn-primary">Amptelike Webwerf (.co.za)</a>
+        <a href="https://open.spotify.com/artist/5X4B32J3xPjG5V74lKkH2o" target="_blank" rel="noopener" class="btn">Luister op Spotify</a>
       </div>
-      <div class="link-hub">
-        <a href="https://fokofpolisiekar.co.za" target="_blank" rel="noopener" class="link-card"><div class="link-card-name">Fokofpolisiekar Amptelik</div><div class="link-card-desc">Official site, tickets, merch</div><span class="link-card-arrow">&rarr;</span></a>
-        <a href="https://www.francoisvancoke.co.za" target="_blank" rel="noopener" class="link-card"><div class="link-card-name">Francois van Coke</div><div class="link-card-desc">Solo career</div><span class="link-card-arrow">&rarr;</span></a>
-        <a href="https://www.litnet.co.za/biografie-van-n-bende-fokof-we-ll-piss-where-we-want/" target="_blank" rel="noopener" class="link-card"><div class="link-card-name">Annie Klopper</div><div class="link-card-desc"><em>Biografie van &rsquo;n Bende</em> author</div><span class="link-card-arrow">&rarr;</span></a>
-        <a href="https://www.fokoflager.com" target="_blank" rel="noopener" class="link-card"><div class="link-card-name">Fokof Lager</div><div class="link-card-desc">Craft beer</div><span class="link-card-arrow">&rarr;</span></a>
-        <a href="https://www.facebook.com/vancokokartel/" target="_blank" rel="noopener" class="link-card"><div class="link-card-name">Van Coke Kartel</div><div class="link-card-desc">Side project</div><span class="link-card-arrow">&rarr;</span></a>
-        <a href="https://www.dieheuwels.co.za" target="_blank" rel="noopener" class="link-card"><div class="link-card-name">Die Heuwels Fantasties</div><div class="link-card-desc">Side project</div><span class="link-card-arrow">&rarr;</span></a>
-      </div>
-      <section class="discography">
-        <h2>Discography / Diskografie</h2>
-        <div class="disco-grid">
-          <div class="disco-card"><div class="disco-art"><img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Fokofpolisiekar_-_As_jy_met_vuur_speel_sal_jy_brand.jpg" alt="As Jy Met Vuur Speel Sal Jy Brand cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>As Jy Met Vuur Speel Sal Jy Brand</h3><div class="disco-year">2003 &middot; EP</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/5gSfDHZrqgG02WCE30NRvM" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/as-jy-met-vuur-speel-sal-jy-brand/1357744911" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-          <div class="disco-card"><div class="disco-art"><img src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02dd17680ecd84e18f0a59966e" alt="Lugsteuring cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>Lugsteuring</h3><div class="disco-year">2004 &middot; Album</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/70OvqpZUoXn99Q0dwKy80L" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/lugsteuring/1694350868" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-          <div class="disco-card"><div class="disco-art"><img src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02bc275e876720d199489c1fa6" alt="Monoloog In Stereo cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>Monoloog In Stereo</h3><div class="disco-year">2005 &middot; EP</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/3SlUt5JwR3cOZVA07hpAJj" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/monoloog-in-stereo-ep/1706224522" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-          <div class="disco-card"><div class="disco-art"><img src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02a2e2d0b2f318bf3dee5f9aca" alt="Swanesang cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>Swanesang</h3><div class="disco-year">2006 &middot; Album</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/0HuC7bFOPeqxtmia1rxFSz" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/swanesang/1578777610" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-          <div class="disco-card"><div class="disco-art"><img src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b1c19c9d38609eb3c9f6091e" alt="Antibiotika cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>Antibiotika</h3><div class="disco-year">2008 &middot; EP</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/1yOHVNh64O72drYxTFWkr1" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/antibiotika-ep/1689232200" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-          <div class="disco-card"><div class="disco-art"><img src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02f501d0a2886cffc8441d50a0" alt="Selfmedikasie cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>Selfmedikasie</h3><div class="disco-year">2017 &middot; Album</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/5sXdRwgSx9AKlUcS9dZlvN" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/selfmedikasie/1278110881" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-          <div class="disco-card"><div class="disco-art"><img src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e022365e6f27c951d348d19e7f8" alt="Droom Hoog cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>Droom Hoog</h3><div class="disco-year">2018 &middot; EP</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/5StqvidiCZOX2ClEi1AsUF" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/droom-hoog-ep/1437458849" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-          <div class="disco-card"><div class="disco-art"><img src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02a23dbadf50ccba6f23bd4711" alt="Dans Deur Die Donker cover" loading="lazy" decoding="async" fetchpriority="low" onerror="this.style.display='none'"></div><div class="disco-info"><h3>Dans Deur Die Donker</h3><div class="disco-year">2023 &middot; Album</div><div class="disco-embed"><iframe src="https://open.spotify.com/embed/album/7jUyw77fSgURWIUtikiidJ" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe></div><a href="https://music.apple.com/us/album/dans-deur-die-donker/1717130095" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a></div></div>
-        </div>
-      </section>
-      <section class="timeline">
-        <h2>Timeline / Tydlyn</h2>
-        <div class="timeline-track">
-          <div class="milestone"><div class="milestone-year">2003</div><div class="milestone-content">Band formed in Bellville, near Cape Town. Debut EP <em>As Jy Met Vuur Speel Sal Jy Brand</em> released on Punkskelm Records.</div></div>
-          <div class="milestone"><div class="milestone-year">2004</div><div class="milestone-content">Debut studio album <em>Lugsteuring</em> released. Recorded at B-Sharp Studios.</div></div>
-          <div class="milestone"><div class="milestone-year">2005</div><div class="milestone-content"><em>Monoloog In Stereo</em> EP released &mdash; 6 tracks showing songwriting maturation.</div></div>
-          <div class="milestone"><div class="milestone-year">2006</div><div class="milestone-content">Studio album <em>Swanesang</em> released (12 tracks). Christian groups accused the band of blasphemy; controversy reported by IOL.</div></div>
-          <div class="milestone"><div class="milestone-year">2006&ndash;2007</div><div class="milestone-content">Band went on hiatus. Members formed side projects: Van Coke Kartel, Die Heuwels Fantasties, aKING.</div></div>
-          <div class="milestone"><div class="milestone-year">2008</div><div class="milestone-content"><em>Antibiotika</em> EP released &mdash; double CD with 4 new tracks and 8 music videos.</div></div>
-          <div class="milestone"><div class="milestone-year">2009</div><div class="milestone-content">Documentary <em>Forgive Them For They Know Not What They Do</em> premiered at Encounters Film Festival.</div></div>
-          <div class="milestone"><div class="milestone-year">2012</div><div class="milestone-content">10-year anniversary. <em>Fokofpolisiekar 10 Year Anniversary</em> compilation released.</div></div>
-          <div class="milestone"><div class="milestone-year">2017</div><div class="milestone-content"><em>Selfmedikasie</em> released &mdash; third studio album, first in 11 years. Crowdfunded via Thundafund, hitting R500,000 target in 9 days.</div></div>
-          <div class="milestone"><div class="milestone-year">2018</div><div class="milestone-content"><em>Droom Hoog</em> EP released (5 tracks).</div></div>
-          <div class="milestone"><div class="milestone-year">2023</div><div class="milestone-content"><em>Dans Deur Die Donker</em> album released (12 tracks) on Punkskelm Records.</div></div>
-          <div class="milestone"><div class="milestone-year">2026</div><div class="milestone-content">New album in progress. Working title: <em>Post-Afrikaner</em> (originally a &lsquo;Monoloog 2&rsquo; EP concept). Targeted release ~October 2026.</div></div>
-        </div>
-        <div class="timeline-sources"><p><em>Alle feite uit openbare bronne. Fout? <a href="mailto:info@wildlogic.co.za">Laat weet ons</a>.</em></p></div>
-      </section>
-      <div class="pasella-note">💡 <strong>Pasella Kennisgewing:</strong> Alle skakels is pasella. 0% kommissie. 100% van strome en verkeer gaan direk na die band en amptelike kanale.</div>
-    </main>
-    <footer>A <a href="https://www.wildlogic.co.za" target="_blank" rel="noopener">WildLogic</a> archive project</footer>
+      <p class="legal">Onoffisiële fan-argief. Nie geaffilieer met Fokofpolisiekar nie. Alle skakels verwys na amptelike kanale.</p>
+    </div>
   </div>
+  <footer>'n <a href="https://github.com/WildLogic" target="_blank" rel="noopener">WildLogic</a> argief-projek</footer>
 </body>
 </html>
