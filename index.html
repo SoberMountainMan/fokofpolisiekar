@@ -65,12 +65,23 @@
 
     h1 {
       font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3.5rem, 9vw, 5.5rem);
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
       letter-spacing: 2px;
       line-height: 0.9;
-      color: #fff;
-      text-shadow: 3px 3px 0px var(--accent-red);
       margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #ff2a2a, #ff8c00, #ffd700, #ff2a2a);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation: gradient-shift 4s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .quote {
@@ -92,19 +103,61 @@
       width: 180px;
       height: 180px;
       margin: 0 auto 1.5rem auto;
-      border: 2px solid var(--border-color);
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
-      background: #000;
+      border: 3px solid #cc1100;
+      box-shadow: 0 0 25px rgba(255, 42, 42, 0.35), inset 0 0 30px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(160deg, #cc1100 0%, #8b0000 40%, #1a0000 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      position: relative;
     }
 
-    .art-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .art-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+      );
+      pointer-events: none;
+    }
+
+    .art-placeholder {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0.75rem;
+    }
+
+    .art-placeholder .ep-title {
+      font-family: 'Bebas Neue', cursive;
+      color: #fff;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      line-height: 1.25;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .art-placeholder .ep-band {
+      font-family: 'Courier Prime', monospace;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 0.6rem;
+    }
+
+    .art-placeholder .ep-year {
+      font-family: 'Bebas Neue', cursive;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      margin-top: 0.3rem;
     }
 
     .museum-title {
@@ -218,7 +271,11 @@
         
       <!-- Placeholder frame for the 2003 EP cover artwork -->
       <div class="art-frame">
-        <img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Fokofpolisiekar_As_Jy_Met_Vuur_Speel_Sal_Jy_Brand.jpg" alt="As Jy Met Vuur Speel Sal Jy Brand EP Cover" onerror="this.style.display='none'; this.parentNode.innerText='[ 2003 EP ARTWORK ]'">
+        <div class="art-placeholder">
+          <div class="ep-title">AS JY MET<br>VUUR SPEEL<br>SAL JY BRAND</div>
+          <div class="ep-band">Fokofpolisiekar</div>
+          <div class="ep-year">2003</div>
+        </div>
       </div>
 
       <div class="museum-title">DIE INFORMELE MUSEUM ARCHIVE</div>
