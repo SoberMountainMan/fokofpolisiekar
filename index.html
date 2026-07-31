@@ -303,6 +303,150 @@
       .link-hub { grid-template-columns: 1fr; }
     }
 
+    /* Discography Vault */
+    .discography {
+      text-align: left;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .discography h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .disco-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .disco-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+    .disco-card:hover {
+      border-color: var(--accent-red);
+    }
+    .disco-art {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #111;
+    }
+    .disco-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .disco-info {
+      padding: 0.85rem;
+    }
+    .disco-info h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.15rem;
+      color: #fff;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      margin-bottom: 0.15rem;
+    }
+    .disco-year {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .disco-embed {
+      margin-bottom: 0.5rem;
+    }
+    .disco-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--accent-red);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .disco-link:hover {
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .disco-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Timeline */
+    .timeline {
+      text-align: left;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .timeline h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-track {
+      position: relative;
+      padding-left: 1.75rem;
+      border-left: 2px solid var(--border-color);
+    }
+    .milestone {
+      position: relative;
+      margin-bottom: 1.75rem;
+    }
+    .milestone:last-child {
+      margin-bottom: 0;
+    }
+    .milestone::before {
+      content: '';
+      position: absolute;
+      left: calc(-1.75rem - 5px);
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      background: var(--accent-red);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 42, 42, 0.5);
+    }
+    .milestone-year {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.25rem;
+      color: var(--accent-red);
+      letter-spacing: 1px;
+      line-height: 1.2;
+      margin-bottom: 0.15rem;
+    }
+    .milestone-content {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+    .timeline-sources {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+      text-align: center;
+    }
+    .timeline-sources p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    .timeline-sources a {
+      color: var(--accent-red);
+      text-decoration: none;
+    }
+    .timeline-sources a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -405,6 +549,183 @@
           <span class="link-card-arrow">&rarr;</span>
         </a>
       </div>
+
+      <!-- EDIT: Discography Vault -->
+      <section class="discography">
+        <h2>Discography / Diskografie</h2>
+        <div class="disco-grid">
+
+          <div class="disco-card">
+            <div class="disco-art">
+              <img src="https://i.scdn.co/image/ab6761610000f178c0408e3ec984cae1156ebb77" alt="As Jy Met Vuur Speel Sal Jy Brand cover" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="disco-info">
+              <h3>As Jy Met Vuur Speel Sal Jy Brand</h3>
+              <div class="disco-year">2003 &middot; EP</div>
+              <div class="disco-embed">
+                <iframe src="https://open.spotify.com/embed/album/5gSfDHZrqgG02WCE30NRvM" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe>
+              </div>
+              <a href="https://music.apple.com/us/album/as-jy-met-vuur-speel-sal-jy-brand/1357744911" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a>
+            </div>
+          </div>
+
+          <div class="disco-card">
+            <div class="disco-art">
+              <img src="https://i.scdn.co/image/ab6761610000f178dd17680ecd84e18f0a59966e" alt="Lugsteuring cover" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="disco-info">
+              <h3>Lugsteuring</h3>
+              <div class="disco-year">2004 &middot; Album</div>
+              <div class="disco-embed">
+                <iframe src="https://open.spotify.com/embed/album/70OvqpZUoXn99Q0dwKy80L" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe>
+              </div>
+              <a href="https://music.apple.com/us/album/lugsteuring/1694350868" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a>
+            </div>
+          </div>
+
+          <div class="disco-card">
+            <div class="disco-art">
+              <img src="https://i.scdn.co/image/ab6761610000f178bc275e876720d199489c1fa6" alt="Monoloog In Stereo cover" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="disco-info">
+              <h3>Monoloog In Stereo</h3>
+              <div class="disco-year">2005 &middot; EP</div>
+              <div class="disco-embed">
+                <iframe src="https://open.spotify.com/embed/album/3SlUt5JwR3cOZVA07hpAJj" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe>
+              </div>
+              <a href="https://music.apple.com/us/album/monoloog-in-stereo-ep/1706224522" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a>
+            </div>
+          </div>
+
+          <div class="disco-card">
+            <div class="disco-art">
+              <img src="https://i.scdn.co/image/ab6761610000f178a2e2d0b2f318bf3dee5f9aca" alt="Swanesang cover" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="disco-info">
+              <h3>Swanesang</h3>
+              <div class="disco-year">2006 &middot; Album</div>
+              <div class="disco-embed">
+                <iframe src="https://open.spotify.com/embed/album/0HuC7bFOPeqxtmia1rxFSz" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe>
+              </div>
+              <a href="https://music.apple.com/us/album/swanesang/1578777610" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a>
+            </div>
+          </div>
+
+          <div class="disco-card">
+            <div class="disco-art">
+              <img src="https://i.scdn.co/image/ab6761610000f178b1c19c9d38609eb3c9f6091e" alt="Antibiotika cover" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="disco-info">
+              <h3>Antibiotika</h3>
+              <div class="disco-year">2008 &middot; EP</div>
+              <div class="disco-embed">
+                <iframe src="https://open.spotify.com/embed/album/1yOHVNh64O72drYxTFWkr1" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe>
+              </div>
+              <a href="https://music.apple.com/us/album/antibiotika-ep/1689232200" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a>
+            </div>
+          </div>
+
+          <div class="disco-card">
+            <div class="disco-art">
+              <img src="https://i.scdn.co/image/ab6761610000f178f501d0a2886cffc8441d50a0" alt="Selfmedikasie cover" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="disco-info">
+              <h3>Selfmedikasie</h3>
+              <div class="disco-year">2017 &middot; Album</div>
+              <div class="disco-embed">
+                <iframe src="https://open.spotify.com/embed/album/5sXdRwgSx9AKlUcS9dZlvN" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe>
+              </div>
+              <a href="https://music.apple.com/us/album/selfmedikasie/1278110881" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a>
+            </div>
+          </div>
+
+          <div class="disco-card">
+            <div class="disco-art">
+              <img src="https://i.scdn.co/image/ab6761610000f178a23dbadf50ccba6f23bd4711" alt="Dans Deur Die Donker cover" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="disco-info">
+              <h3>Dans Deur Die Donker</h3>
+              <div class="disco-year">2023 &middot; Album</div>
+              <div class="disco-embed">
+                <iframe src="https://open.spotify.com/embed/album/7jUyw77fSgURWIUtikiidJ" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px"></iframe>
+              </div>
+              <a href="https://music.apple.com/us/album/dans-deur-die-donker/1717130095" target="_blank" rel="noopener" class="disco-link">Apple Music &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- EDIT: Interactive Timeline -->
+      <section class="timeline">
+        <h2>Timeline / Tydlyn</h2>
+        <div class="timeline-track">
+
+          <div class="milestone">
+            <div class="milestone-year">2003</div>
+            <div class="milestone-content">Band formed in Bellville, near Cape Town. Debut EP <em>As Jy Met Vuur Speel Sal Jy Brand</em> released on Punkskelm Records.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2004</div>
+            <div class="milestone-content">Debut studio album <em>Lugsteuring</em> released. Recorded at B-Sharp Studios.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2005</div>
+            <div class="milestone-content"><em>Monoloog In Stereo</em> EP released &mdash; 6 tracks showing songwriting maturation.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2006</div>
+            <div class="milestone-content">Studio album <em>Swanesang</em> released (12 tracks). Christian groups accused the band of blasphemy; controversy reported by IOL.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2006&ndash;2007</div>
+            <div class="milestone-content">Band went on hiatus. Members formed side projects: Van Coke Kartel, Die Heuwels Fantasties, aKING.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2008</div>
+            <div class="milestone-content"><em>Antibiotika</em> EP released &mdash; double CD with 4 new tracks and 8 music videos.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2009</div>
+            <div class="milestone-content">Documentary <em>Forgive Them For They Know Not What They Do</em> premiered at Encounters Film Festival.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2012</div>
+            <div class="milestone-content">10-year anniversary. <em>Fokofpolisiekar 10 Year Anniversary</em> compilation released.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2017</div>
+            <div class="milestone-content"><em>Selfmedikasie</em> released &mdash; third studio album, first in 11 years. Crowdfunded via Thundafund, hitting R500,000 target in 9 days.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2018</div>
+            <div class="milestone-content"><em>Droom Hoog</em> EP released (5 tracks).</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2023</div>
+            <div class="milestone-content"><em>Dans Deur Die Donker</em> album released (12 tracks) on Punkskelm Records.</div>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-year">2026</div>
+            <div class="milestone-content">New material in progress. <em>Post-Afrikaner</em> referenced as upcoming release.</div>
+          </div>
+
+        </div>
+        <div class="timeline-sources">
+          <p><em>Alle feite uit openbare bronne. Fout? <a href="mailto:info@wildlogic.co.za">Laat weet ons</a>.</em></p>
+        </div>
+      </section>
 
       <div class="pasella-note">
         💡 <strong>Pasella Kennisgewing:</strong> Alle skakels is pasella. 0% kommissie. 100% van strome en verkeer gaan direk na die band en amptelike kanale.
