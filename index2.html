@@ -73,6 +73,39 @@
     @media (max-width:768px) { .hub-grid { grid-template-columns:repeat(2,1fr); } }
     @media (max-width:480px) { .hub-grid { grid-template-columns:1fr; } .nav-links { gap:0.75rem; } .nav-links a { font-size:0.62rem; letter-spacing:1px; } .section { padding:3rem 1rem; } .story-card { padding:1.25rem; } }
     @media (max-width:600px) { .disco-grid { grid-template-columns:1fr; } }
+    .disco-tabs { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:2rem; }
+    .disco-tabs label { font-family:'Anton',sans-serif; font-size:0.85rem; letter-spacing:1.5px; text-transform:uppercase; padding:0.45rem 1.1rem; border:1px solid var(--border); border-radius:3px; color:var(--muted); cursor:pointer; transition:all 0.2s ease; }
+    .disco-tabs label:hover { border-color:var(--accent); color:var(--accent); }
+    .tab-radio { position:absolute; opacity:0; pointer-events:none; }
+    #tab-alles:checked ~ .disco-tabs label[for="tab-alles"], #tab-ateljee:checked ~ .disco-tabs label[for="tab-ateljee"], #tab-eps:checked ~ .disco-tabs label[for="tab-eps"], #tab-live:checked ~ .disco-tabs label[for="tab-live"], #tab-versam:checked ~ .disco-tabs label[for="tab-versam"] { background:var(--accent); border-color:var(--accent); color:#000; box-shadow:0 0 14px rgba(255,77,77,0.35); }
+    #tab-ateljee:checked ~ .disco-grid .disco-card:not(.c-ateljee), #tab-eps:checked ~ .disco-grid .disco-card:not(.c-eps), #tab-live:checked ~ .disco-grid .disco-card:not(.c-live), #tab-versam:checked ~ .disco-grid .disco-card:not(.c-versam) { display:none; }
+    .disco-notes { font-size:0.72rem; color:var(--muted); margin-top:0.4rem; line-height:1.4; }
+    .disco-badge { display:inline-block; font-size:0.62rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); border-radius:2px; padding:0.1rem 0.4rem; margin-left:0.4rem; vertical-align:middle; }
+    .disco-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(160deg,var(--art-red) 0%,#3a0a0a 60%,#12060a 100%); padding:1rem; text-align:center; }
+    .disco-placeholder span { font-family:'Anton',sans-serif; color:#fff; font-size:1rem; letter-spacing:1px; line-height:1.3; text-shadow:1px 1px 3px rgba(0,0,0,0.7); }
+    .disco-placeholder em { font-size:0.65rem; color:rgba(255,255,255,0.65); font-style:normal; letter-spacing:2px; text-transform:uppercase; margin-top:0.4rem; }
+    .ghost-card { border-style:dashed; opacity:0.75; }
+    .ghost-card .disco-placeholder { background:linear-gradient(160deg,#1a1a24 0%,#12121a 100%); }
+    .nou-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:2rem; }
+    .nou-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1.5rem; }
+    .nou-card h3 { font-family:'Anton',sans-serif; font-size:1.3rem; letter-spacing:1px; color:#fff; margin-bottom:0.5rem; }
+    .nou-card p { font-size:0.88rem; line-height:1.6; }
+    .bit-wrap { min-height:420px; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); }
+    .manne-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; }
+    .man-card { background:var(--card); border:1px solid var(--border); border-radius:10px; transition:border-color 0.2s ease; }
+    .man-card[open] { border-color:var(--accent); }
+    .man-card summary { list-style:none; cursor:pointer; padding:1.1rem 1.25rem; }
+    .man-card summary::-webkit-details-marker { display:none; }
+    .man-top { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; }
+    .man-top::after { content:'▸'; color:var(--accent); font-size:0.9rem; transition:transform 0.2s ease; }
+    .man-card[open] .man-top::after { transform:rotate(90deg); }
+    .man-name { font-family:'Anton',sans-serif; font-size:1.15rem; letter-spacing:1px; color:#fff; }
+    .man-role { display:block; font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px; margin-top:0.2rem; }
+    .man-body { padding:0 1.25rem 1.25rem; font-size:0.88rem; line-height:1.6; }
+    .man-links { margin-top:0.75rem; display:flex; gap:1.25rem; flex-wrap:wrap; }
+    .man-links a { font-size:0.78rem; color:var(--accent); text-decoration:none; }
+    .man-links a:hover { color:#fff; }
+    @media (max-width:768px) { .nou-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -80,7 +113,9 @@
     <a href="#" class="nav-brand">fokofpolisiekar.com</a>
     <div class="nav-links">
       <a href="#hub">Hub</a>
+      <a href="#nou">Nou</a>
       <a href="#musiek">Musiek</a>
+      <a href="#manne">Manne</a>
       <a href="#tydlyn">Tydlyn</a>
       <a href="#storie">Storie</a>
     </div>
