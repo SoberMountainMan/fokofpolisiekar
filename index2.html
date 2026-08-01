@@ -71,7 +71,7 @@
     footer a { color:var(--text); text-decoration:none; }
     footer a:hover { color:var(--accent); }
     @media (max-width:768px) { .hub-grid { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:480px) { .hub-grid { grid-template-columns:1fr; } .nav-links { gap:0.75rem; } .nav-links a { font-size:0.62rem; letter-spacing:1px; } .section { padding:3rem 1rem; } .story-card { padding:1.25rem; } }
+    @media (max-width:480px) { .hub-grid { grid-template-columns:1fr; } .nav { flex-wrap:wrap; row-gap:0.5rem; } .nav-links { gap:0.6rem 0.75rem; flex-wrap:wrap; } .nav-links a { font-size:0.62rem; letter-spacing:1px; } .section { padding:3rem 1rem; } .story-card { padding:1.25rem; } .show { gap:0.6rem; } .show-cta { display:none; } }
     @media (max-width:600px) { .disco-grid { grid-template-columns:1fr; } }
     .disco-tabs { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:2rem; }
     .disco-tabs label { font-family:'Anton',sans-serif; font-size:0.85rem; letter-spacing:1.5px; text-transform:uppercase; padding:0.45rem 1.1rem; border:1px solid var(--border); border-radius:3px; color:var(--muted); cursor:pointer; transition:all 0.2s ease; }
@@ -91,6 +91,17 @@
     .nou-card h3 { font-family:'Anton',sans-serif; font-size:1.3rem; letter-spacing:1px; color:#fff; margin-bottom:0.5rem; }
     .nou-card p { font-size:0.88rem; line-height:1.6; }
     .bit-wrap { min-height:420px; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); }
+    .shows { border:1px solid var(--border); border-radius:10px; background:var(--card); overflow:hidden; }
+    .shows-title { font-family:'Anton',sans-serif; font-size:1.1rem; letter-spacing:2px; color:#fff; padding:1.1rem 1.25rem 0.75rem; }
+    .show { display:flex; align-items:center; gap:1rem; padding:0.85rem 1.25rem; border-top:1px solid var(--border); text-decoration:none; transition:background 0.2s ease; }
+    .show:hover { background:rgba(255,77,77,0.06); }
+    .show-date { font-family:'Anton',sans-serif; font-size:0.95rem; letter-spacing:1px; color:var(--accent); min-width:70px; }
+    .show-info { flex:1; display:flex; flex-direction:column; }
+    .show-venue { color:var(--text); font-size:0.9rem; font-weight:500; }
+    .show-city { color:var(--muted); font-size:0.75rem; }
+    .show-cta { font-size:0.75rem; color:var(--accent); letter-spacing:1px; text-transform:uppercase; }
+    .show-more { display:block; padding:0.9rem 1.25rem; border-top:1px solid var(--border); color:var(--muted); font-size:0.8rem; text-decoration:none; text-align:center; }
+    .show-more:hover { color:var(--accent); }
     .manne-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; }
     .man-card { background:var(--card); border:1px solid var(--border); border-radius:10px; transition:border-color 0.2s ease; }
     .man-card[open] { border-color:var(--accent); }
@@ -157,9 +168,15 @@
           <p>Twenty years on, the band took <em>Swanesang</em> back across Australia and New Zealand &mdash; and through every Fokof era since, die Bende only gets better with age.</p>
         </div>
       </div>
-      <div class="bit-wrap">
-        <a class="bit-widget-initializer" data-artist-name="fokofpolisiekar" data-events-to-display="" data-background-color="rgba(20,20,25,1)" data-separator-color="rgba(38,38,46,1)" data-text-color="rgba(232,232,232,1)" data-font="Inter, sans-serif" data-auto-style="true">events</a>
-        <script defer src="https://widget.bandsintown.com/main.js"></script>
+      <div class="shows">
+        <div class="shows-title">NEXT SHOWS</div>
+        <a class="show" href="https://www.bandsintown.com/e/108471795" target="_blank" rel="noopener"><span class="show-date">14 AUG</span><span class="show-info"><span class="show-venue">Woodstock Brewery</span><span class="show-city">Cape Town</span></span><span class="show-cta">Tickets &rarr;</span></a>
+        <a class="show" href="https://www.bandsintown.com/e/1039183930" target="_blank" rel="noopener"><span class="show-date">09 OCT</span><span class="show-info"><span class="show-venue">SunBet Arena, TimeSquare</span><span class="show-city">Pretoria</span></span><span class="show-cta">Tickets &rarr;</span></a>
+        <a class="show" href="https://www.bandsintown.com/e/108721935" target="_blank" rel="noopener"><span class="show-date">30 OCT</span><span class="show-info"><span class="show-venue">Halloween 2026</span><span class="show-city">Cape Town</span></span><span class="show-cta">Tickets &rarr;</span></a>
+        <a class="show" href="https://www.bandsintown.com/e/108556825" target="_blank" rel="noopener"><span class="show-date">07 NOV</span><span class="show-info"><span class="show-venue">Liefde by die Dam</span><span class="show-city">Cape Town</span></span><span class="show-cta">Tickets &rarr;</span></a>
+        <a class="show" href="https://www.bandsintown.com/e/108472032" target="_blank" rel="noopener"><span class="show-date">14 NOV</span><span class="show-info"><span class="show-venue">Dans Deur Die Donker</span><span class="show-city">Abu Dhabi</span></span><span class="show-cta">Tickets &rarr;</span></a>
+        <a class="show" href="https://www.bandsintown.com/e/108556866" target="_blank" rel="noopener"><span class="show-date">03 DEC</span><span class="show-info"><span class="show-venue">Matriekbaai</span><span class="show-city">Mossel Bay</span></span><span class="show-cta">Tickets &rarr;</span></a>
+        <a class="show-more" href="https://www.bandsintown.com/a/Fokofpolisiekar" target="_blank" rel="noopener">Alle shows + volg die band op Bandsintown &rarr;</a>
       </div>
     </section>
     <section class="section" id="musiek">
