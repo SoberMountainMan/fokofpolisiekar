@@ -170,12 +170,14 @@
       </div>
       <div class="shows">
         <div class="shows-title">NEXT SHOWS</div>
+        <div id="shows-list">
         <a class="show" href="https://www.bandsintown.com/e/108471795" target="_blank" rel="noopener"><span class="show-date">14 AUG</span><span class="show-info"><span class="show-venue">Woodstock Brewery</span><span class="show-city">Cape Town</span></span><span class="show-cta">Tickets &rarr;</span></a>
         <a class="show" href="https://www.bandsintown.com/e/1039183930" target="_blank" rel="noopener"><span class="show-date">09 OCT</span><span class="show-info"><span class="show-venue">SunBet Arena, TimeSquare</span><span class="show-city">Pretoria</span></span><span class="show-cta">Tickets &rarr;</span></a>
         <a class="show" href="https://www.bandsintown.com/e/108721935" target="_blank" rel="noopener"><span class="show-date">30 OCT</span><span class="show-info"><span class="show-venue">Halloween 2026</span><span class="show-city">Cape Town</span></span><span class="show-cta">Tickets &rarr;</span></a>
         <a class="show" href="https://www.bandsintown.com/e/108556825" target="_blank" rel="noopener"><span class="show-date">07 NOV</span><span class="show-info"><span class="show-venue">Liefde by die Dam</span><span class="show-city">Cape Town</span></span><span class="show-cta">Tickets &rarr;</span></a>
         <a class="show" href="https://www.bandsintown.com/e/108472032" target="_blank" rel="noopener"><span class="show-date">14 NOV</span><span class="show-info"><span class="show-venue">Dans Deur Die Donker</span><span class="show-city">Abu Dhabi</span></span><span class="show-cta">Tickets &rarr;</span></a>
         <a class="show" href="https://www.bandsintown.com/e/108556866" target="_blank" rel="noopener"><span class="show-date">03 DEC</span><span class="show-info"><span class="show-venue">Matriekbaai</span><span class="show-city">Mossel Bay</span></span><span class="show-cta">Tickets &rarr;</span></a>
+        </div>
         <a class="show-more" href="https://www.bandsintown.com/a/Fokofpolisiekar" target="_blank" rel="noopener">Alle shows + volg die band op Bandsintown &rarr;</a>
       </div>
     </section>
@@ -270,5 +272,33 @@
     </section>
   </main>
   <footer>'n <a href="https://www.wildlogic.co.za" target="_blank" rel="noopener">WildLogic</a> argief-projek</footer>
+  <script>
+  (function () {
+    var API = "https://rest.bandsintown.com/artists/Fokofpolisiekar/events?app_id=squarespace-fokof-polisiekar&date=upcoming";
+    var MAANDE = ["JAN","FEB","MRT","APR","MEI","JUN","JUL","AUG","SEP","OKT","NOV","DES"];
+    var box = document.getElementById("shows-list");
+    if (!box || !window.fetch) return;
+    function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+    fetch(API).then(function (r) { return r.ok ? r.json() : null; }).then(function (events) {
+      if (!events || !events.length) return;
+      var rows = "";
+      events.forEach(function (ev) {
+        var d = new Date(ev.datetime);
+        if (isNaN(d.getTime())) return;
+        var date = ("0" + d.getDate()).slice(-2) + " " + MAANDE[d.getMonth()];
+        var venue = (ev.venue && ev.venue.name) || ev.title || "Show";
+        var city = ev.venue ? [ev.venue.city, ev.venue.country].filter(Boolean).join(", ") : "";
+        var offer = ev.offers && ev.offers[0];
+        var href = (offer && offer.url) || ev.url || "https://www.bandsintown.com/a/Fokofpolisiekar";
+        var cta = ev.sold_out ? "Info" : (offer ? (offer.type || "Tickets") : "RSVP");
+        rows += '<a class="show" href="' + esc(href) + '" target="_blank" rel="noopener">'
+          + '<span class="show-date">' + date + "</span>"
+          + '<span class="show-info"><span class="show-venue">' + esc(venue) + '</span><span class="show-city">' + esc(city) + "</span></span>"
+          + '<span class="show-cta">' + esc(cta) + " &rarr;</span></a>";
+      });
+      if (rows) box.innerHTML = rows;
+    }).catch(function () { /* API unreachable: static fallback list stays */ });
+  })();
+  </script>
 </body>
 </html>
