@@ -41,7 +41,7 @@
     @keyframes swarmC { 0% { transform:translate(0,0) scale(0.2) rotate(4deg); opacity:0; } 14% { opacity:1; } 60% { transform:translate(100px,-50px) scale(0.85) rotate(-10deg); } 100% { transform:translate(200px,-90px) scale(1.3) rotate(8deg); opacity:0; } }
     @keyframes flapL { from { transform:rotate(16deg); } to { transform:rotate(-18deg); } }
     @keyframes flapR { from { transform:rotate(-16deg); } to { transform:rotate(18deg); } }
-    @media (prefers-reduced-motion: reduce) { .bat, .bat .wing-l, .bat .wing-r { animation:none; } .bat { opacity:0.9; transform:scale(0.85); } }
+    @media (prefers-reduced-motion: reduce) { .bat, .bat.t2, .bat.t3, .bat .wing-l, .bat .wing-r { animation:none; } .bat { opacity:0.9; transform:scale(0.85); } }
     .section { max-width:960px; margin:0 auto; padding:4rem 1.25rem; }
     .section-title { font-family:'Anton',sans-serif; font-size:clamp(2rem,6vw,3rem); text-transform:uppercase; letter-spacing:2px; color:#fff; text-align:center; margin-bottom:0.5rem; }
     .section-sub { text-align:center; color:var(--muted); font-size:0.9rem; margin-bottom:2.5rem; }
