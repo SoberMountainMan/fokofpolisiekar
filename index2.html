@@ -15,6 +15,7 @@
     :root { --bg:#0a0a0e; --card:#141419; --border:#26262e; --accent:#ff4d4d; --accent-2:#ff8800; --art-red:#a81b1b; --art-red-2:#c8322b; --art-red-3:#df604c; --text:#e8e8e8; --muted:#9a9aa2; }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
     html, body { overflow-x:hidden; }
     body { background-color:var(--bg); background-image:radial-gradient(circle at 50% 100%, rgba(168,27,27,0.12), transparent 60%); color:var(--text); font-family:'Inter',sans-serif; line-height:1.6; }
     .nav { position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:0.75rem 1.25rem; background:rgba(10,10,14,0.85); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
@@ -316,7 +317,6 @@
         iframe.frameBorder = "0";
         iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
         iframe.style.borderRadius = "12px";
-        iframe.setAttribute("allowfullscreen", "");
         box.innerHTML = "";
         box.appendChild(iframe);
       });
