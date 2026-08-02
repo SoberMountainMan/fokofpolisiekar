@@ -47,9 +47,9 @@
     .bat .wing { transform-box:fill-box; }
     .bat .wing-l { transform-origin:right center; animation:flapL var(--flap,0.3s) ease-in-out infinite alternate; }
     .bat .wing-r { transform-origin:left center; animation:flapR var(--flap,0.3s) ease-in-out infinite alternate; }
-    @keyframes swarmA { 0% { transform:translate(0,0) scale(0.2) rotate(8deg); opacity:0; } 12% { opacity:1; } 55% { transform:translate(35px,-32vh) scale(0.75) rotate(-12deg); } 100% { transform:translate(70px,-63vh) scale(1.15) rotate(5deg); opacity:0; } }
-    @keyframes swarmB { 0% { transform:translate(0,0) scale(0.16) rotate(-6deg); opacity:0; } 12% { opacity:1; } 50% { transform:translate(15px,-36vh) scale(0.7) rotate(10deg); } 100% { transform:translate(50px,-66vh) scale(1.05) rotate(-8deg); opacity:0; } }
-    @keyframes swarmC { 0% { transform:translate(0,0) scale(0.22) rotate(3deg); opacity:0; } 14% { opacity:1; } 60% { transform:translate(50px,-28vh) scale(0.85) rotate(-8deg); } 100% { transform:translate(95px,-60vh) scale(1.3) rotate(7deg); opacity:0; } }
+    @keyframes swarmA { 0% { transform:translate(0,0) scale(0.2) rotate(8deg); opacity:0; } 12% { opacity:1; } 55% { transform:translate(35px,-32vh) scale(0.75) rotate(-12deg); opacity:1; } 80% { transform:translate(56px,-50vh) scale(0.95) rotate(-3deg); opacity:1; } 100% { transform:translate(70px,-63vh) scale(1.15) rotate(5deg); opacity:0; } }
+    @keyframes swarmB { 0% { transform:translate(0,0) scale(0.16) rotate(-6deg); opacity:0; } 12% { opacity:1; } 50% { transform:translate(15px,-36vh) scale(0.7) rotate(10deg); opacity:1; } 80% { transform:translate(36px,-54vh) scale(0.9) rotate(2deg); opacity:1; } 100% { transform:translate(50px,-66vh) scale(1.05) rotate(-8deg); opacity:0; } }
+    @keyframes swarmC { 0% { transform:translate(0,0) scale(0.22) rotate(3deg); opacity:0; } 14% { opacity:1; } 60% { transform:translate(50px,-28vh) scale(0.85) rotate(-8deg); opacity:1; } 82% { transform:translate(77px,-47vh) scale(1.1) rotate(-2deg); opacity:1; } 100% { transform:translate(95px,-60vh) scale(1.3) rotate(7deg); opacity:0; } }
     @keyframes flapL { from { transform:rotate(16deg); } to { transform:rotate(-18deg); } }
     @keyframes flapR { from { transform:rotate(-16deg); } to { transform:rotate(18deg); } }
     @media (prefers-reduced-motion: reduce) { .bat, .bat.t2, .bat.t3, .bat .wing-l, .bat .wing-r { animation:none; } .bat { opacity:0.9; transform:scale(0.85); } }
